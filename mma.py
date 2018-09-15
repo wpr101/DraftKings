@@ -23,26 +23,29 @@ my_combos = combinations(data, 6)
 #917 combos chosen with 2 good fighters
 count = 0
 our_lineups = []
+good_ones = ['Petr Yan', 'Magomed Ankalaev', 'Aleksei Kunchenko', 'Jordan Johnson' ]
+bad_ones = ['Jin Soo Son', 'Thiago Alves', 'Marcin Prachnio', 'Terrion Ware', 'Kajan Johnson', 'Stefan Sekulic', 'Desmond Green']
+
 for item in my_combos:
     lineup_cost = 0
-    fighter1 = False
-    fighter2 = False
-    fighter3 = False
+    good_count = 0
+    bad_count = 0
     for fighter in item:
-        if fighter[0] == 'Petr Yan':
-            fighter1 = True
-        if fighter[0] == 'Magomed Ankalaev':
-            fighter2 = True
-        if fighter[0] == 'Kajan Johnson':#'Jordan Johnson': #or fighter[0] == 'Aleksei Kunchenko':
-            figther3 = True
+        if fighter[0] in good_ones:
+            good_count += 1
+        if fighter[0] in bad_ones:
+            bad_count += 1
         lineup_cost += int(fighter[1])
-    if not (lineup_cost <= 50000 and lineup_cost >= 49000):
+    if not (lineup_cost <= 50000 and lineup_cost >= 49500):
         continue
-    if (fighter1 is False) or (fighter2 is False) or (fighter3 is False):
+    if good_count < 3:
+        continue
+    if bad_count > 0:
         continue
     
     our_lineups.append(item)
         
-        
-
 print(len(our_lineups))
+for lineup in our_lineups:
+    print(lineup)
+    print('')
