@@ -1,12 +1,6 @@
 import csv
 from itertools import combinations
 
-class Player:
-    def __init__(self):
-        self.name = name
-        self.cost = cost
-        
-
 f = open('DKSalariesFootball9-17.csv', 'rb')
 reader = csv.reader(f)
 data = []
@@ -40,12 +34,13 @@ for lineup in my_combos:
             captain_count += 1
             if captain_count > 1:
                 too_many_captains = True
+                break
             cost += float(player[1])
             avg_points += float(player[2])
         else:
             cost += float(player[1])
             avg_points += float(player[2])
-    if (cost > 50000) or (too_many_captains == True):
+    if (cost > 50000) or (too_many_captains == True) or (captain_count == 0):
         continue
     double_player = False
     for i in lineup:
@@ -55,6 +50,7 @@ for lineup in my_combos:
                 counter += 1
                 if counter > 1:
                     double_player = True
+                    break
     if double_player:
         continue
                     
