@@ -36,7 +36,7 @@ for lineup in my_combos:
                 too_many_captains = True
                 break
             cost += float(player[1])
-            avg_points += float(player[2])
+            avg_points += float(player[2]) * 1.5
         else:
             cost += float(player[1])
             avg_points += float(player[2])
