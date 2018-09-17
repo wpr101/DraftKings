@@ -41,9 +41,9 @@ for lineup in my_combos:
             if captain_count > 1:
                 too_many_captains = True
             cost += float(player[1])
-            avg_points += float(player[2]) * 1.5
+            avg_points += float(player[2])
         else:
-            cost += float(player[1]) / 1.5 
+            cost += float(player[1])
             avg_points += float(player[2])
     if (cost > 50000) or (too_many_captains == True):
         continue
@@ -63,6 +63,7 @@ for lineup in my_combos:
         best_score = avg_points
         print(best_lineup)
         print("best_score:", best_score)
+        print("cost:", cost)
         print("")
 
     
