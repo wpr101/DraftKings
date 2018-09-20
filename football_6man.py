@@ -1,7 +1,9 @@
 import csv
 from itertools import combinations
 
-f = open('./data/DKSalariesFootbal9-20.csv', 'rb')
+OPKR_DATA = False
+
+f = open('./data/DKSalariesFootball9-17.csv', 'rb')
 reader = csv.reader(f)
 data = []
 seen = []
@@ -11,9 +13,11 @@ for line in reader:
     avg_points = line[8]
     roster_position = line[4]
     # We have OPKR data
-    if len(line) == 10:
+    if OPKR_DATA:
         opkr = line[9]
-    data.append((name,cost,avg_points,roster_position,opkr))
+        data.append((name,cost,avg_points,roster_position,opkr))
+    else:
+        data.append((name,cost,avg_points,roster_position))
 f.close()
 
 # Remove title
@@ -33,16 +37,17 @@ for lineup in my_combos:
     captain_count = 0
     too_many_captains = False
     for player in lineup:
-        opkr = int(player[4])
         opkr_factor = 1.0
-        if opkr >= 18 and opkr < 25:
-            opkr_factor = 1.1
-        elif opkr >= 25:
-            opkr_factor = 1.2
-        elif opkr_factor > 8 and opkr <= 14:
-            opkr_factor = 0.9
-        elif opkr_factor <= 8:
-            opkr_factor = 0.8
+        if OPKR_DATA:
+            opkr = int(player[4])
+            if opkr >= 18 and opkr < 25:
+                opkr_factor = 1.1
+            elif opkr >= 25:
+                opkr_factor = 1.2
+            elif opkr_factor > 8 and opkr <= 14:
+                opkr_factor = 0.9
+            elif opkr_factor <= 8:
+                opkr_factor = 0.8
         if player[3] == 'CPT':
             captain_count += 1
             if captain_count > 1:
@@ -66,12 +71,19 @@ for lineup in my_combos:
                     break
     if double_player:
         continue
+    bears_captain = False
+    for player in lineup:
+        if player[0] == 'Bears ' and player[3] == 'CPT':
+            bears_captain = True
+    if not bears_captain:
+        continue
                     
-    if avg_points > best_score:
+    if avg_points > 105:#best_score:
         best_lineup = lineup
-        best_score = avg_points
+        #best_score = avg_points
         print(best_lineup)
-        print("best_score:", best_score)
+        #print("best_score:", best_score)
+        print("avg_points", avg_points)
         print("cost:", cost)
         print("")
 
