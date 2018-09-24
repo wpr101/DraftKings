@@ -3,7 +3,7 @@ from itertools import combinations
 
 OPKR_DATA = False
 
-f = open('./data/DKSalariesFootball9-17.csv', 'rb')
+f = open('./data/DKSalariesFootball9-23.csv', 'rb')
 reader = csv.reader(f)
 data = []
 seen = []
@@ -58,7 +58,7 @@ for lineup in my_combos:
         else:
             cost += float(player[1])
             avg_points += float(player[2]) * opkr_factor
-    if (cost > 50000) or (too_many_captains == True) or (captain_count == 0):
+    if (cost > 50000 or cost < 48500) or (too_many_captains == True) or (captain_count == 0):
         continue
     double_player = False
     for i in lineup:
@@ -71,20 +71,26 @@ for lineup in my_combos:
                     break
     if double_player:
         continue
-    bears_captain = False
+    the_captain = False
     for player in lineup:
-        if player[0] == 'Bears ' and player[3] == 'CPT':
-            bears_captain = True
-    if not bears_captain:
+        if (player[0] == 'Golden Tate') and player[3] == 'CPT':
+            the_captain = True
+    if not the_captain:
         continue
                     
-    if avg_points > 105:#best_score:
+    '''if avg_points > best_score:
         best_lineup = lineup
-        #best_score = avg_points
+        best_score = avg_points
         print(best_lineup)
-        #print("best_score:", best_score)
-        print("avg_points", avg_points)
+        print("best_score:", best_score)
+        #print("avg_points", avg_points)
         print("cost:", cost)
-        print("")
+        print("")'''
+
+    if avg_points > 105:
+       print(lineup)
+       print("cost:", cost)
+       print("avg_points", avg_points)
+       print("")
 
     
