@@ -3,7 +3,7 @@ from itertools import combinations
 
 OPKR_DATA = False
 
-f = open('./data/DKSalariesFootball9-23.csv', 'rb')
+f = open('./data/DKSalariesFootball9-24.csv', 'rb')
 reader = csv.reader(f)
 data = []
 seen = []
@@ -73,24 +73,24 @@ for lineup in my_combos:
         continue
     the_captain = False
     for player in lineup:
-        if (player[0] == 'Golden Tate') and player[3] == 'CPT':
+        if (player[0] == 'JuJu Smith-Schuster') and player[3] == 'CPT':
             the_captain = True
     if not the_captain:
         continue
                     
-    '''if avg_points > best_score:
+    if avg_points > best_score:
         best_lineup = lineup
         best_score = avg_points
         print(best_lineup)
         print("best_score:", best_score)
         #print("avg_points", avg_points)
         print("cost:", cost)
-        print("")'''
+        print("")
 
-    if avg_points > 105:
+    '''if avg_points > 105:
        print(lineup)
        print("cost:", cost)
        print("avg_points", avg_points)
-       print("")
+       print("")'''
 
     
