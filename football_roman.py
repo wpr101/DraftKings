@@ -2,6 +2,8 @@ import csv
 from itertools import combinations
 import random
 
+FAN_DUEL = True
+
 f = open('./data/DKSalariesROMAN9-30.csv', 'rb')
 reader = csv.reader(f)
 QBs = []
@@ -19,9 +21,9 @@ for line in reader:
     position = line[0]
     name = line[2]
     salary = int(line[5])
-    points = float(line[8])
-    if points > 0:
-        entry = (position, name, salary, points)
+    dk_fppg = float(line[8])
+    if dk_fppg > 0:
+        entry = [position, name, salary, dk_fppg]
         if position == 'QB':
             QBs.append(entry)
         elif position == 'RB':
@@ -33,6 +35,50 @@ for line in reader:
         elif position == 'DST':
             DSTs.append(entry)
 f.close()
+
+fd_QBs = []
+fd_RBs = []
+fd_WRs = []
+fd_TEs = []
+fd_DSTs = []
+if FAN_DUEL == True:
+    f = open('./data/FanDuel-NFL-2018-09-30-28509-players-list.csv', 'rb')
+    reader = csv.reader(f)
+    first_line = True
+
+    for line in reader:
+        if first_line == True:
+            first_line = False
+            continue
+        position = line[1]
+        name = line[3]
+        fd_fppg = round(float(line[5]),2)
+        injury = line[11]
+        if fd_fppg > 0 and injury == '':
+            fd_entry = [position,name,fd_fppg]
+            if position == 'QB':
+                fd_QBs.append(fd_entry)
+            elif position == 'RB':
+                fd_RBs.append(fd_entry)
+            elif position == 'WR':
+                fd_WRs.append(fd_entry)
+            elif position == 'TE':
+                fd_TEs.append(fd_entry)
+            elif position == 'D':
+                fd_DSTs.append(fd_entry)
+
+    count = 0
+    for dk_qb in QBs:
+        for fd_qb in fd_QBs:
+            if fd_qb[1] == dk_qb[1]:
+                print fd_qb[1]
+                print fd_qb[2]
+                print dk_qb[3]
+                average = round((fd_qb[2] + dk_qb[3]) / 2, 2)
+                print average
+                print ''
+
+
 
 top_points = 0
 while True:

@@ -73,7 +73,7 @@ for lineup in my_combos:
         continue
     the_captain = False
     for player in lineup:
-        if (player[0] == 'JuJu Smith-Schuster') and player[3] == 'CPT':
+        if (player[0] == 'Juju Smith-Schuster') and player[3] == 'CPT':
             the_captain = True
     if not the_captain:
         continue
