@@ -2,7 +2,7 @@ import csv
 from itertools import combinations
 import random
 
-f = open('./data/DKSalariesCollegeFBAfternoon9-28.csv', 'rb')
+f = open('data/DKSalariesCollegeFB9-28.csv', 'rb')
 reader = csv.reader(f)
 QBs = []
 RBs = []
@@ -52,6 +52,8 @@ top_points = 0
 while True:
     total_points = 0
     QB = random.choice(QBs)
+    while 'Tagova' not in QB.name:
+        QB = random.choice(QBs)
     RB1 = random.choice(RBs)
     RB2 = random.choice(RBs)
     while RB1.name == RB2.name:
@@ -71,7 +73,7 @@ while True:
           or (WR2.name == FLEX.name):
         FLEX = random.choice(RBs + WRs)
     S_FLEX = random.choice(QBs)
-    while S_FLEX.name == QB.name:
+    while S_FLEX.name == QB.name or 'Ehlinger' not in S_FLEX.name:
         S_FLEX = random.choice(QBs)
     WR3 = random.choice(WRs)
     count = 0
@@ -99,7 +101,7 @@ while True:
         print(FLEX)
         print(S_FLEX)
         print("salary", total_salary)
-        print("points", total_points)
+        print("points", round(total_points,2))
         print("")
 
     

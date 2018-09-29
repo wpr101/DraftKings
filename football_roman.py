@@ -2,9 +2,9 @@ import csv
 from itertools import combinations
 import random
 
-FAN_DUEL = True
+FAN_DUEL = False
 
-f = open('./data/DKSalariesROMAN9-30.csv', 'rb')
+f = open('/data/DKSalariesROMAN9-30.csv', 'rb')
 reader = csv.reader(f)
 QBs = []
 RBs = []
@@ -13,26 +13,40 @@ TEs = []
 DSTs = []
 first_line = True
 
+class Player():
+    def __init__(self, spot, name, position, salary, team, points):
+        self.spot = spot
+        self.name = name
+        self.position = position
+        self.salary = salary
+        self.team = team
+        self.points = points
+
+    def __repr__(self):
+        return 'Player(name=%s, spot=%s, team=%s, points=%s, salary=%s)' % (self.name, self.spot, self.team, self.points, self.salary)
+
 for line in reader:
     if first_line == True:
         first_line = False
         continue
         
-    position = line[0]
+    spot = line[0]      
     name = line[2]
+    position = line[4]
     salary = int(line[5])
-    dk_fppg = float(line[8])
-    if dk_fppg > 0:
-        entry = [position, name, salary, dk_fppg]
-        if position == 'QB':
+    team = line[7]
+    points = float(line[8])
+    if points > 0:
+        entry = Player(spot, name, position, salary, team, points)
+        if spot == 'QB':
             QBs.append(entry)
-        elif position == 'RB':
+        elif spot == 'RB':
             RBs.append(entry)
-        elif position == 'WR':
+        elif spot == 'WR':
             WRs.append(entry)
-        elif position == 'TE':
+        elif spot == 'TE':
             TEs.append(entry)
-        elif position == 'DST':
+        elif spot == 'DST':
             DSTs.append(entry)
 f.close()
 
@@ -84,30 +98,35 @@ top_points = 0
 while True:
     total_points = 0
     QB = random.choice(QBs)
+    while 'Manning' not in QB.name:
+        QB = random.choice(QBs)
     RB1 = random.choice(RBs)
     RB2 = random.choice(RBs)
-    while RB1[1] == RB2[1]:
+    while RB1.name == RB2.name:
         RB2 = random.choice(RBs)
     WR1 = random.choice(WRs)
+    count = 0
+    while WR1.team != QB.team:
+        WR1 = random.choice(WRs)
     WR2 = random.choice(WRs)
-    while WR1[1] == WR2[1]:
+    while WR1.name == WR2.name:
         WR2 = random.choice(WRs)
     WR3 = random.choice(WRs)
-    while (WR3[1] == WR2[1]) or (WR3[1] == WR1[1]):
+    while (WR3.name == WR2.name) or (WR3.name == WR1.name):
         WR3 = random.choice(WRs)
     TE = random.choice(TEs)
     FLEX = random.choice(RBs + WRs + TEs)
-    while (FLEX[1] == WR1[1]) or (FLEX[1] == WR2[1]) or (FLEX[1] == WR3[1]) \
-          or (FLEX[1] == RB1[1]) or (FLEX[1] == RB2[1]) or (FLEX[1] == TE[1]):
+    while (FLEX.name == WR1.name) or (FLEX.name == WR2.name) or (FLEX.name == WR3.name) \
+          or (FLEX.name == RB1.name) or (FLEX.name == RB2.name) or (FLEX.name == TE.name):
         FLEX = random.choice(RBs + WRs + TEs)
     DST = random.choice(DSTs)
 
-    total_salary = QB[2] + RB1[2] + RB2[2] + WR1[2] + WR2[2] + WR3[2] + \
-                   TE[2] + FLEX[2] + DST[2]
+    total_salary = QB.salary + RB1.salary + RB2.salary + WR1.salary + WR2.salary + WR3.salary + \
+                   TE.salary + FLEX.salary + DST.salary
     if total_salary <= 49000 or total_salary > 50000:
         continue
-    total_points = QB[3] + RB1[3] + RB2[3] + WR1[3] + WR2[3] + WR3[3] + \
-                   TE[3] + FLEX[3] + DST[3]
+    total_points = QB.points + RB1.points + RB2.points + WR1.points + WR2.points + WR3.points + \
+                   TE.points + FLEX.points + DST.points
     if total_points > top_points:
         top_points = total_points
         print(QB)

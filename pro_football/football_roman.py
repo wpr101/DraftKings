@@ -98,7 +98,7 @@ top_points = 0
 while True:
     total_points = 0
     QB = random.choice(QBs)
-    while 'Rivers' not in QB.name:
+    while 'Manning' not in QB.name:
         QB = random.choice(QBs)
     RB1 = random.choice(RBs)
     RB2 = random.choice(RBs)
