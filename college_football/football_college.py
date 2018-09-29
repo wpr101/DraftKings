@@ -52,8 +52,8 @@ top_points = 0
 while True:
     total_points = 0
     QB = random.choice(QBs)
-    while 'Tagova' not in QB.name:
-        QB = random.choice(QBs)
+    '''while 'Tagova' not in QB.name:
+        QB = random.choice(QBs)'''
     RB1 = random.choice(RBs)
     RB2 = random.choice(RBs)
     while RB1.name == RB2.name:
@@ -73,7 +73,7 @@ while True:
           or (WR2.name == FLEX.name):
         FLEX = random.choice(RBs + WRs)
     S_FLEX = random.choice(QBs)
-    while S_FLEX.name == QB.name or 'Ehlinger' not in S_FLEX.name:
+    while S_FLEX.name == QB.name:# or 'Ehlinger' not in S_FLEX.name:
         S_FLEX = random.choice(QBs)
     WR3 = random.choice(WRs)
     count = 0
