@@ -17,7 +17,7 @@ class Player():
         return 'Player(name=%s, position=%s, team=%s, odds=%s, team_points=%s, salary=%s, points=%s, value=%s)' % \
                (self.name, self.position, self.team, self.odds, self.team_points, self.salary, self.points, self.value)
 
-f = open('./data/rotowire-NFL-players-outsiders-9-30.csv', 'rb')
+f = open('./data/afternoon-only-9-30/rotowire-NFL-players-outsiders.csv', 'rb')
 reader = csv.reader(f)
 QBs = []
 RBs = []
@@ -41,7 +41,7 @@ for line in reader:
     if points == 10.0:
         points = 0
     value = float(line[11])
-    if points > 0 and team != 'KC' and team != 'DEN':
+    if points > 0 and team != 'KC' and team != 'DEN' and team != 'BAL' and team != 'PIT' and 'Fitz' not in name:
         entry = Player(name, position, team, odds, team_points, salary, points, value)
         if position == 'QB':
             QBs.append(entry)
@@ -56,7 +56,7 @@ for line in reader:
 f.close()
 
 count = 0
-f = open('./data/rotowire-NFL-players-pff-9-30.csv', 'rb')
+f = open('./data/afternoon-only-9-30/rotowire-NFL-players-pff.csv', 'rb')
 reader = csv.reader(f)
 for line in reader:
     if count < 2:
@@ -71,7 +71,7 @@ for line in reader:
     salary = int(line[9])
     points = float(line[10])
     value = float(line[11])
-    if points > 0 and team != 'KC' and team != 'DEN':
+    if points > 0 and team != 'KC' and team != 'DEN' and team != 'BAL' and team != 'PIT' and 'Fitz' not in name:
         entry = Player(name, position, team, odds, team_points, salary, points, value)
         if position == 'QB':
             for guy in QBs:
@@ -101,7 +101,7 @@ for line in reader:
 f.close()
 
 count = 0
-f = open('./data/rotowire-NFL-players-rotowire-9-30.csv', 'rb')
+f = open('./data/afternoon-only-9-30/rotowire-NFL-players-rotowire.csv', 'rb')
 reader = csv.reader(f)
 for line in reader:
     if count < 2:
@@ -116,33 +116,33 @@ for line in reader:
     salary = int(line[9])
     points = float(line[10])
     value = float(line[11])
-    if points > 0 and team != 'KC' and team != 'DEN':
+    if points > 0 and team != 'KC' and team != 'DEN' and team != 'BAL' and team != 'PIT' and 'Fitz' not in name:
         entry = Player(name, position, team, odds, team_points, salary, points, value)
         if position == 'QB':
             for guy in QBs:
                 if entry.name == guy.name:
-                    guy.points = (entry.points + guy.points)/float(2)
-                    guy.value = (entry.value + guy.value)/float(2)
+                    guy.points = (entry.points*.666 + guy.points*.333)
+                    guy.value = (entry.value*.666 + guy.value*.333)
         elif position == 'RB':
             for guy in RBs:
                 if entry.name == guy.name:
-                    guy.points = (entry.points + guy.points)/float(2)
-                    guy.value = (entry.value + guy.value)/float(2)
+                    guy.points = (entry.points*.666 + guy.points*.333)
+                    guy.value = (entry.value*.666 + guy.value*.333)
         elif position == 'WR':
             for guy in WRs:
                 if entry.name == guy.name:
-                    guy.points = (entry.points + guy.points)/float(2)
-                    guy.value = (entry.value + guy.value)/float(2)
+                    guy.points = (entry.points*.666 + guy.points*.333)
+                    guy.value = (entry.value*.666 + guy.value*.333)
         elif position == 'TE':
             for guy in TEs:
                 if entry.name == guy.name:
-                    guy.points = (entry.points + guy.points)/float(2)
-                    guy.value = (entry.value + guy.value)/float(2)
+                    guy.points = (entry.points*.666 + guy.points*.333)
+                    guy.value = (entry.value*.666 + guy.value*.333)
         elif position == 'D':
             for guy in DSTs:
                 if entry.name == guy.name:
-                    guy.points = (entry.points + guy.points)/float(2)
-                    guy.value = (entry.value + guy.value)/float(2)
+                    guy.points = (entry.points*.666 + guy.points*.333)
+                    guy.value = (entry.value*.666 + guy.value*.333)
 f.close()
 
 
