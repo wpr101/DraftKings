@@ -98,9 +98,11 @@ top_points = 0
 while True:
     total_points = 0
     QB = random.choice(QBs)
-    while 'Manning' not in QB.name:
+    while 'Philip Rivers' not in QB.name:
         QB = random.choice(QBs)
     RB1 = random.choice(RBs)
+    while 'Alvin Kamara' not in RB1.name:
+        RB1 = random.choice(RBs)
     RB2 = random.choice(RBs)
     while RB1.name == RB2.name:
         RB2 = random.choice(RBs)

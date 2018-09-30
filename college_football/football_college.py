@@ -2,7 +2,7 @@ import csv
 from itertools import combinations
 import random
 
-f = open('data/DKSalariesCollegeFB9-28.csv', 'rb')
+f = open('data/DKSalariesLateNight9-29.csv', 'rb')
 reader = csv.reader(f)
 QBs = []
 RBs = []
@@ -33,7 +33,7 @@ for line in reader:
     salary = int(line[5])
     team = line[7]
     points = float(line[8])
-    if points > 0:
+    if points > 0 and 'Artavis Pierce' not in name:
         our_boy = Player(spot, name, position, salary, team, points)
         if 'QB' in position:
             QBs.append(our_boy)
