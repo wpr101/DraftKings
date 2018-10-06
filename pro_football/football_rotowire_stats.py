@@ -16,8 +16,9 @@ class Player():
     def __repr__(self):
         return 'Player(name=%s, position=%s, team=%s, odds=%s, team_points=%s, salary=%s, points=%s, value=%s)' % \
                (self.name, self.position, self.team, self.odds, self.team_points, self.salary, self.points, self.value)
-
-f = open('./data/afternoon-only-9-30/rotowire-NFL-players-outsiders.csv', 'rb')
+    
+folder_name = 'sunday-fd-10-6'
+f = open('./data/' + folder_name + './rotowire-NFL-players-outsiders.csv', 'rb')
 reader = csv.reader(f)
 QBs = []
 RBs = []
@@ -38,10 +39,8 @@ for line in reader:
     team_points = float(line[7])
     salary = int(line[9])
     points = float(line[10])
-    if points == 10.0:
-        points = 0
     value = float(line[11])
-    if points > 0 and team != 'KC' and team != 'DEN' and team != 'BAL' and team != 'PIT' and 'Fitz' not in name:
+    if points > 0 and points != 10.0:
         entry = Player(name, position, team, odds, team_points, salary, points, value)
         if position == 'QB':
             QBs.append(entry)
@@ -56,7 +55,7 @@ for line in reader:
 f.close()
 
 count = 0
-f = open('./data/afternoon-only-9-30/rotowire-NFL-players-pff.csv', 'rb')
+f = open('./data/' + folder_name + '/rotowire-NFL-players-pff.csv', 'rb')
 reader = csv.reader(f)
 for line in reader:
     if count < 2:
@@ -71,7 +70,7 @@ for line in reader:
     salary = int(line[9])
     points = float(line[10])
     value = float(line[11])
-    if points > 0 and team != 'KC' and team != 'DEN' and team != 'BAL' and team != 'PIT' and 'Fitz' not in name:
+    if points > 0 and (team == 'KC' or team == 'DEN'):
         entry = Player(name, position, team, odds, team_points, salary, points, value)
         if position == 'QB':
             for guy in QBs:
@@ -101,7 +100,7 @@ for line in reader:
 f.close()
 
 count = 0
-f = open('./data/afternoon-only-9-30/rotowire-NFL-players-rotowire.csv', 'rb')
+f = open('./data/' + folder_name + '/rotowire-NFL-players-roto.csv', 'rb')
 reader = csv.reader(f)
 for line in reader:
     if count < 2:
@@ -116,7 +115,7 @@ for line in reader:
     salary = int(line[9])
     points = float(line[10])
     value = float(line[11])
-    if points > 0 and team != 'KC' and team != 'DEN' and team != 'BAL' and team != 'PIT' and 'Fitz' not in name:
+    if points > 0 and (team == 'KC' or team == 'DEN'):
         entry = Player(name, position, team, odds, team_points, salary, points, value)
         if position == 'QB':
             for guy in QBs:
@@ -179,7 +178,7 @@ while True:
 
     total_salary = QB.salary + RB1.salary + RB2.salary + WR1.salary + WR2.salary + WR3.salary + \
                    TE.salary + FLEX.salary + DST.salary
-    if total_salary > 50000:
+    if total_salary > 60000:
         continue
     total_points = QB.points + RB1.points + RB2.points + WR1.points + WR2.points + WR3.points + \
                    TE.points + FLEX.points + DST.points

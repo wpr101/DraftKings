@@ -8,44 +8,49 @@ fighters = []
 first_line = True
 
 class Player():
-    def __init__(self, name, odds, salary, fppf):
+    def __init__(self, name, odds, salary, fppf, fight_num):
         self.name = name
         self.odds = int(odds)
         self.salary = int(salary)
         self.fppf = float(fppf)
+        self.fight_num = int(fight_num)
 
     def __repr__(self):
-        return 'Player(name=%s, odds=%s, salary=%s, fppf=%s)' % \
-    (self.name, self.odds, self.salary, self.fppf)
+        return 'Player(name=%s, odds=%s, salary=%s, fppf=%s, fight_num=%s)' % \
+    (self.name, self.odds, self.salary, self.fppf, self.fight_num)
 
-fighters.append(Player('Mcgregor', 138, 7800, 104.1))
-fighters.append(Player('Ferguson', -344, 9300, 90.6))
-fighters.append(Player('Pettis', 269, 6900, 64.4))
-fighters.append(Player('Reyes', -219, 8900, 108.5))
-fighters.append(Player('Volkov', -173, 8700, 92.0))
-fighters.append(Player('Lewis', 144, 7500, 71.1))
-fighters.append(Player('Herrig', -131, 8300, 72.2))
-fighters.append(Player('Waterson', 107, 7900, 72.2))
-fighters.append(Player('OMalley', -316, 9200, 92.5))
-fighters.append(Player('Quinonez', 248, 7000, 81.8))
-fighters.append(Player('Pettis', 269, 8600, 60.7))
-fighters.append(Player('Formiga', 140, 7600, 56.0))
-fighters.append(Player('Luque', -769, 9400, 85.4))
-fighters.append(Player('Turner', 522, 6800, 70))
-fighters.append(Player('Ladd', -166, 8200, 94))
-fighters.append(Player('Evinger', 139, 8000, 21))
-fighters.append(Player('Kunitskaya', -187, 8500, 10.5))
-fighters.append(Player('Lansberg', 155, 7700, 39.4))
-fighters.append(Player('Patrick', -252, 9100, 77.1))
-fighters.append(Player('Holtzman', -202, 7100, 82.5))
-fighters.append(Player('Lentz', -221, 9000, 69.1))
-fighters.append(Player('Maynard', 177, 7200, 56.7))
-fighters.append(Player('LaFlare', -156, 8800, 70.1))
-fighters.append(Player('Martin', 130, 7400, 52.2))
+fighters.append(Player('Nurmagomedov', -175, 8400, 112.4, 1))
+fighters.append(Player('Mcgregor', 150, 7800, 104.1, 1))
+fighters.append(Player('Ferguson', -345, 9300, 90.6, 2))
+fighters.append(Player('A. Pettis', 270, 6900, 64.4, 2))
+fighters.append(Player('Reyes', -231, 8900, 108.5, 3))
+fighters.append(Player('OSP', 189, 8900, 108.5, 3))
+fighters.append(Player('Volkov', -167, 8700, 92.0, 4))
+fighters.append(Player('Lewis', 139, 7500, 71.1, 4))
+fighters.append(Player('Herrig', -121, 8300, 72.2, 5))
+fighters.append(Player('Waterson', -102, 7900, 72.2, 5))
+fighters.append(Player('Formiga', 130, 7600, 56.0, 7))
+fighters.append(Player('S. Pettis', -155, 8600, 56.0, 7))
+fighters.append(Player('Luque', -829, 9400, 85.4, 8))
+fighters.append(Player('Turner', 566, 6800, 70, 8))
+fighters.append(Player('Ladd', -171, 8200, 94, 9))
+fighters.append(Player('Evinger', 143, 8000, 21, 9))
+fighters.append(Player('Kunitskaya', -212, 8500, 10.5, 10))
+fighters.append(Player('Lansberg', 174, 7700, 39.4, 10))
+fighters.append(Player('Patrick', -268, 9100, 77.1, 11))
+fighters.append(Player('Holtzman', 216, 7100, 82.5, 11))
+fighters.append(Player('Lentz', -241, 9000, 69.1, 12))
+fighters.append(Player('Maynard', 195, 7200, 56.7, 12))
+fighters.append(Player('LaFlare', -136, 8800, 70.1, 13))
+fighters.append(Player('Martin', 113, 7400, 52.2, 13))
+
 
 my_combos = combinations(fighters, 6)
+
 best_score = 99999
+num_lineups = 0
 for lineup in my_combos:
+    num_lineups += 1
     total_score = 0
     points = 0
     salary = 0
@@ -58,6 +63,14 @@ for lineup in my_combos:
             total_score += player.odds/float(100)
     if salary > 50000:
         continue
+    double_flag = False
+    for p1 in lineup:
+        for p2 in lineup:
+            if p1.fight_num == p2.fight_num and p1.name != p2.name:
+                double_flag = True
+    if double_flag:
+        continue
+                
     if total_score < best_score:
         for player in lineup:
             print(player)
@@ -67,4 +80,4 @@ for lineup in my_combos:
         print("")
         best_score = total_score
 
-    
+print("num_lineups", num_lineups)    
