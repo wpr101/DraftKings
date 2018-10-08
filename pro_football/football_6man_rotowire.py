@@ -1,7 +1,11 @@
 import csv
 from itertools import combinations
 
-FOLDER = 'monday-night-10-8'
+FOLDER = 'monday-night-10-8/new'
+ROTO_FACTOR = .25
+PFF_FACTOR = .5
+OUTSIDERS_FACTOR = .25
+
 
 class Player():
     def __init__(self, name, cost, position):
@@ -24,7 +28,7 @@ for line in reader:
     cost = line[5]
     roster_position = line[4]
     avg_points = line[8]
-    if avg_points > 0:
+    if avg_points > 0 and 'Doctson' not in name and 'Ginn' not in name:
         data.append(Player(name,cost,roster_position))
 f.close()
 
@@ -47,8 +51,8 @@ for line in r_roto:
     r_name = line[0]
     for player in data:
         if r_name == player.name:
-            player.points = float(line[10])
-            player.value = float(line[11])
+            player.points += float(line[10]) * ROTO_FACTOR
+            player.value += float(line[11]) * ROTO_FACTOR
 
 count = 0
 for line in r_pff:
@@ -59,8 +63,8 @@ for line in r_pff:
     r_name = line[0]
     for player in data:
         if r_name == player.name:
-            player.points = round((float(line[10]) * .5) + (player.points * .5),2)
-            player.value = round((float(line[11]) * .5) + (player.value * .5),2)
+            player.points += float(line[10]) * PFF_FACTOR
+            player.value += float(line[11]) * PFF_FACTOR
 
 count = 0
 for line in r_outsiders:
@@ -72,8 +76,8 @@ for line in r_outsiders:
     for player in data:
         if r_name == player.name:
             if not float(line[10]) == 10.0:
-                player.points = round((float(line[10]) * .3333) + (player.points * .6666),2)
-                player.value = round((float(line[11]) * .3333) + (player.value * .6666),2)
+                player.points += float(line[10]) * OUTSIDERS_FACTOR
+                player.value += float(line[11]) * OUTSIDERS_FACTOR
             
 
 my_combos = combinations(data, 6)
@@ -117,13 +121,13 @@ for lineup in my_combos:
         continue
     the_captain = False
     a_player = False
-    for player in lineup:
+    '''for player in lineup:
         if 'Ingram' in player.name and player.position == 'CPT':
             the_captain = True
-        '''if 'Crowder' in player.name:
-            a_player = True'''
+        if 'Crowder' in player.name:
+            a_player = True
     if not the_captain:# or not a_player:
-        continue
+        continue'''
                     
     if avg_points > best_score:
         best_lineup = lineup
