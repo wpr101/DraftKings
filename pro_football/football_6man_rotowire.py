@@ -2,9 +2,9 @@ import csv
 from itertools import combinations
 
 FOLDER = 'monday-night-10-8/new'
-ROTO_FACTOR = .25
-PFF_FACTOR = .5
-OUTSIDERS_FACTOR = .25
+ROTO_FACTOR = .3333
+PFF_FACTOR = .3333
+OUTSIDERS_FACTOR = .3333
 
 
 class Player():
@@ -121,13 +121,13 @@ for lineup in my_combos:
         continue
     the_captain = False
     a_player = False
-    '''for player in lineup:
-        if 'Ingram' in player.name and player.position == 'CPT':
+    for player in lineup:
+        if 'Thompson' in player.name and player.position == 'CPT':
             the_captain = True
-        if 'Crowder' in player.name:
-            a_player = True
+        '''if 'Crowder' in player.name:
+            a_player = True'''
     if not the_captain:# or not a_player:
-        continue'''
+        continue
                     
     if avg_points > best_score:
         best_lineup = lineup
