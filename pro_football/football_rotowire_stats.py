@@ -17,7 +17,7 @@ class Player():
         return 'Player(name=%s, position=%s, team=%s, odds=%s, team_points=%s, salary=%s, points=%s, value=%s)' % \
                (self.name, self.position, self.team, self.odds, self.team_points, self.salary, self.points, self.value)
     
-folder_name = 'sunday-fd-10-6'
+folder_name = 'afternoon-only-10-7'
 f = open('./data/' + folder_name + './rotowire-NFL-players-outsiders.csv', 'rb')
 reader = csv.reader(f)
 QBs = []
@@ -54,6 +54,7 @@ for line in reader:
             DSTs.append(entry)
 f.close()
 
+
 count = 0
 f = open('./data/' + folder_name + '/rotowire-NFL-players-pff.csv', 'rb')
 reader = csv.reader(f)
@@ -70,7 +71,7 @@ for line in reader:
     salary = int(line[9])
     points = float(line[10])
     value = float(line[11])
-    if points > 0 and (team == 'KC' or team == 'DEN'):
+    if points > 0:
         entry = Player(name, position, team, odds, team_points, salary, points, value)
         if position == 'QB':
             for guy in QBs:
@@ -115,33 +116,33 @@ for line in reader:
     salary = int(line[9])
     points = float(line[10])
     value = float(line[11])
-    if points > 0 and (team == 'KC' or team == 'DEN'):
+    if points > 0:
         entry = Player(name, position, team, odds, team_points, salary, points, value)
         if position == 'QB':
             for guy in QBs:
                 if entry.name == guy.name:
-                    guy.points = (entry.points*.666 + guy.points*.333)
-                    guy.value = (entry.value*.666 + guy.value*.333)
+                    guy.points = (entry.points*.333 + guy.points*.666)
+                    guy.value = (entry.value*.333 + guy.value*.666)
         elif position == 'RB':
             for guy in RBs:
                 if entry.name == guy.name:
-                    guy.points = (entry.points*.666 + guy.points*.333)
-                    guy.value = (entry.value*.666 + guy.value*.333)
+                    guy.points = (entry.points*.333 + guy.points*.666)
+                    guy.value = (entry.value*.333 + guy.value*.666)
         elif position == 'WR':
             for guy in WRs:
                 if entry.name == guy.name:
-                    guy.points = (entry.points*.666 + guy.points*.333)
-                    guy.value = (entry.value*.666 + guy.value*.333)
+                    guy.points = (entry.points*.333 + guy.points*.666)
+                    guy.value = (entry.value*.333 + guy.value*.666)
         elif position == 'TE':
             for guy in TEs:
                 if entry.name == guy.name:
-                    guy.points = (entry.points*.666 + guy.points*.333)
-                    guy.value = (entry.value*.666 + guy.value*.333)
+                    guy.points = (entry.points*.333 + guy.points*.666)
+                    guy.value = (entry.value*.333 + guy.value*.666)
         elif position == 'D':
             for guy in DSTs:
                 if entry.name == guy.name:
-                    guy.points = (entry.points*.666 + guy.points*.333)
-                    guy.value = (entry.value*.666 + guy.value*.333)
+                    guy.points = (entry.points*.333 + guy.points*.666)
+                    guy.value = (entry.value*.333 + guy.value*.666)
 f.close()
 
 
@@ -178,7 +179,7 @@ while True:
 
     total_salary = QB.salary + RB1.salary + RB2.salary + WR1.salary + WR2.salary + WR3.salary + \
                    TE.salary + FLEX.salary + DST.salary
-    if total_salary > 60000:
+    if total_salary > 50000:
         continue
     total_points = QB.points + RB1.points + RB2.points + WR1.points + WR2.points + WR3.points + \
                    TE.points + FLEX.points + DST.points
