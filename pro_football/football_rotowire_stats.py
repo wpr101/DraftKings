@@ -2,6 +2,11 @@ import csv
 from itertools import combinations
 import random
 
+FOLDER = 'sunday-main-10-12'
+ROTO_FACTOR = .3333
+PFF_FACTOR = .3333
+OUTSIDERS_FACTOR = .3333
+
 class Player():
     def __init__(self, name, position, team, odds, team_points, salary, points, value):
         self.name = name
@@ -17,8 +22,8 @@ class Player():
         return 'Player(name=%s, position=%s, team=%s, odds=%s, team_points=%s, salary=%s, points=%s, value=%s)' % \
                (self.name, self.position, self.team, self.odds, self.team_points, self.salary, self.points, self.value)
     
-folder_name = 'afternoon-only-10-7'
-f = open('./data/' + folder_name + './rotowire-NFL-players-outsiders.csv', 'rb')
+
+f = open('./data/' + FOLDER + './rotowire-NFL-players-outsiders.csv', 'rb')
 reader = csv.reader(f)
 QBs = []
 RBs = []
@@ -38,9 +43,11 @@ for line in reader:
     odds = int(line[4])
     team_points = float(line[7])
     salary = int(line[9])
-    points = float(line[10])
+    points = float(line[10]) 
     value = float(line[11])
-    if points > 0 and points != 10.0:
+    if points > 0 and points != 10.0 and 'Ebron' not in name and 'Olson' not in name:
+        points = points * OUTSIDERS_FACTOR
+        value = value * OUTSIDERS_FACTOR
         entry = Player(name, position, team, odds, team_points, salary, points, value)
         if position == 'QB':
             QBs.append(entry)
@@ -56,7 +63,7 @@ f.close()
 
 
 count = 0
-f = open('./data/' + folder_name + '/rotowire-NFL-players-pff.csv', 'rb')
+f = open('./data/' + FOLDER + '/rotowire-NFL-players-pff.csv', 'rb')
 reader = csv.reader(f)
 for line in reader:
     if count < 2:
@@ -76,32 +83,32 @@ for line in reader:
         if position == 'QB':
             for guy in QBs:
                 if entry.name == guy.name:
-                    guy.points = (entry.points + guy.points)/float(2)
-                    guy.value = (entry.value + guy.value)/float(2)
+                    guy.points += entry.points * PFF_FACTOR
+                    guy.value += entry.value * PFF_FACTOR
         elif position == 'RB':
             for guy in RBs:
                 if entry.name == guy.name:
-                    guy.points = (entry.points + guy.points)/float(2)
-                    guy.value = (entry.value + guy.value)/float(2)
+                    guy.points += entry.points * PFF_FACTOR
+                    guy.value += entry.value * PFF_FACTOR
         elif position == 'WR':
             for guy in WRs:
                 if entry.name == guy.name:
-                    guy.points = (entry.points + guy.points)/float(2)
-                    guy.value = (entry.value + guy.value)/float(2)
+                    guy.points += entry.points * PFF_FACTOR
+                    guy.value += entry.value * PFF_FACTOR
         elif position == 'TE':
             for guy in TEs:
                 if entry.name == guy.name:
-                    guy.points = (entry.points + guy.points)/float(2)
-                    guy.value = (entry.value + guy.value)/float(2)
+                    guy.points += entry.points * PFF_FACTOR
+                    guy.value += entry.value * PFF_FACTOR
         elif position == 'D':
             for guy in DSTs:
                 if entry.name == guy.name:
-                    guy.points = (entry.points + guy.points)/float(2)
-                    guy.value = (entry.value + guy.value)/float(2)
+                    guy.points += entry.points * PFF_FACTOR
+                    guy.value += entry.value * PFF_FACTOR
 f.close()
 
 count = 0
-f = open('./data/' + folder_name + '/rotowire-NFL-players-roto.csv', 'rb')
+f = open('./data/' + FOLDER + '/rotowire-NFL-players-roto.csv', 'rb')
 reader = csv.reader(f)
 for line in reader:
     if count < 2:
@@ -121,28 +128,28 @@ for line in reader:
         if position == 'QB':
             for guy in QBs:
                 if entry.name == guy.name:
-                    guy.points = (entry.points*.333 + guy.points*.666)
-                    guy.value = (entry.value*.333 + guy.value*.666)
+                    guy.points += entry.points * ROTO_FACTOR
+                    guy.value += entry.value * ROTO_FACTOR
         elif position == 'RB':
             for guy in RBs:
                 if entry.name == guy.name:
-                    guy.points = (entry.points*.333 + guy.points*.666)
-                    guy.value = (entry.value*.333 + guy.value*.666)
+                    guy.points += entry.points * ROTO_FACTOR
+                    guy.value += entry.value * ROTO_FACTOR
         elif position == 'WR':
             for guy in WRs:
                 if entry.name == guy.name:
-                    guy.points = (entry.points*.333 + guy.points*.666)
-                    guy.value = (entry.value*.333 + guy.value*.666)
+                    guy.points += entry.points * ROTO_FACTOR
+                    guy.value += entry.value * ROTO_FACTOR
         elif position == 'TE':
             for guy in TEs:
                 if entry.name == guy.name:
-                    guy.points = (entry.points*.333 + guy.points*.666)
-                    guy.value = (entry.value*.333 + guy.value*.666)
+                    guy.points += entry.points * ROTO_FACTOR
+                    guy.value += entry.value * ROTO_FACTOR
         elif position == 'D':
             for guy in DSTs:
                 if entry.name == guy.name:
-                    guy.points = (entry.points*.333 + guy.points*.666)
-                    guy.value = (entry.value*.333 + guy.value*.666)
+                    guy.points += entry.points * ROTO_FACTOR
+                    guy.value += entry.value * ROTO_FACTOR
 f.close()
 
 
@@ -150,9 +157,12 @@ f.close()
 
 
 top_points = 0
+top_value = 0
 while True:
     total_points = 0
     QB = random.choice(QBs)
+    #while 'Wilson' not in QB.name:
+        #QB = random.choice(QBs)
     RB1 = random.choice(RBs)
     RB2 = random.choice(RBs)
     while RB1.name == RB2.name:
@@ -185,8 +195,9 @@ while True:
                    TE.points + FLEX.points + DST.points
     total_value = QB.value + RB1.value + RB2.value + WR1.value + WR2.value + WR3.value + \
                    TE.value + FLEX.value + DST.value
-    if total_points > top_points:
-        top_points = total_points
+    if total_points > 150:
+    #if total_points > top_points:
+        #top_points = total_points
         print(QB)
         print(RB1)
         print(RB2)
