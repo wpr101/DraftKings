@@ -48,9 +48,8 @@ fighters.append(Player('Martin', 113, 7400, 52.2, 13))
 my_combos = combinations(fighters, 6)
 
 best_score = 99999
-num_lineups = 0
+real_lineups = 0
 for lineup in my_combos:
-    num_lineups += 1
     total_score = 0
     points = 0
     salary = 0
@@ -61,8 +60,9 @@ for lineup in my_combos:
             total_score += float(100)/(player.odds *float(-1))
         else:
             total_score += player.odds/float(100)
-    if salary > 50000:
+    if salary > 50000 or salary < 49500:
         continue
+    
     double_flag = False
     for p1 in lineup:
         for p2 in lineup:
@@ -70,14 +70,15 @@ for lineup in my_combos:
                 double_flag = True
     if double_flag:
         continue
-                
-    if total_score < best_score:
+    if total_score < 4.1:
+    #if total_score < best_score:
+        real_lineups += 1
         for player in lineup:
             print(player)
         print("points", round(points,2))
         print("salary", salary)
         print("total_score", round(total_score,2))
         print("")
-        best_score = total_score
+        #best_score = total_score
 
-print("num_lineups", num_lineups)    
+print("real_lineups", real_lineups)    

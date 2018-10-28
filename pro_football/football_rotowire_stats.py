@@ -2,10 +2,10 @@ import csv
 from itertools import combinations
 import random
 
-FOLDER = 'sunday-main-10-12'
-ROTO_FACTOR = .3333
-PFF_FACTOR = .3333
-OUTSIDERS_FACTOR = .3333
+FOLDER = 'sunday-main-10-19'
+ROTO_FACTOR = 0
+PFF_FACTOR = 1
+OUTSIDERS_FACTOR = 0
 
 class Player():
     def __init__(self, name, position, team, odds, team_points, salary, points, value):
@@ -45,7 +45,7 @@ for line in reader:
     salary = int(line[9])
     points = float(line[10]) 
     value = float(line[11])
-    if points > 0 and points != 10.0 and 'Ebron' not in name and 'Olson' not in name:
+    if points > 0 and 'Ebron' not in name and 'Olson' not in name and 'Watson' not in name:
         points = points * OUTSIDERS_FACTOR
         value = value * OUTSIDERS_FACTOR
         entry = Player(name, position, team, odds, team_points, salary, points, value)
@@ -161,13 +161,17 @@ top_value = 0
 while True:
     total_points = 0
     QB = random.choice(QBs)
-    #while 'Wilson' not in QB.name:
-        #QB = random.choice(QBs)
+    while 'Flacco' not in QB.name:
+        QB = random.choice(QBs)
     RB1 = random.choice(RBs)
+    #while 'Edel' not in RB1.name:
+        #RB1 = random.choice(RBs)
     RB2 = random.choice(RBs)
-    while RB1.name == RB2.name:
+    while RB1.name == RB2.name :
         RB2 = random.choice(RBs)
     WR1 = random.choice(WRs)
+    #while 'Brown' not in WR1.name:
+        #WR1 = random.choice(WRs)
     count = 0
     while WR1.team != QB.team:
         WR1 = random.choice(WRs)
@@ -181,11 +185,15 @@ while True:
     while (WR3.name == WR2.name) or (WR3.name == WR1.name):
         WR3 = random.choice(WRs)
     TE = random.choice(TEs)
+    #while 'Boyle' not in TE.name:
+        #TE = random.choice(TEs)
     FLEX = random.choice(RBs + WRs + TEs)
     while (FLEX.name == WR1.name) or (FLEX.name == WR2.name) or (FLEX.name == WR3.name) \
           or (FLEX.name == RB1.name) or (FLEX.name == RB2.name) or (FLEX.name == TE.name):
         FLEX = random.choice(RBs + WRs + TEs)
     DST = random.choice(DSTs)
+    #while 'Jag' not in DST.name:
+        #DST = random.choice(DSTs)
 
     total_salary = QB.salary + RB1.salary + RB2.salary + WR1.salary + WR2.salary + WR3.salary + \
                    TE.salary + FLEX.salary + DST.salary
@@ -195,9 +203,9 @@ while True:
                    TE.points + FLEX.points + DST.points
     total_value = QB.value + RB1.value + RB2.value + WR1.value + WR2.value + WR3.value + \
                    TE.value + FLEX.value + DST.value
-    if total_points > 150:
-    #if total_points > top_points:
-        #top_points = total_points
+    #if total_points > 149.5:
+    if total_points > top_points:
+        top_points = total_points
         print(QB)
         print(RB1)
         print(RB2)
