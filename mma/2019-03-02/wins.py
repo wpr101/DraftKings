@@ -24,30 +24,44 @@ def convert_to_percent(odds):
     return (percent)
 
 fighters = []
-#fighters.append(Player('Kevin Lee', -135, 9000, 1))
-fighters.append(Player('Iaquinta', 452, 7200, 1))
-#fighters.append(Player('Hooker', 184, 8200, 2))
-#fighters.append(Player('Barboza', 276, 8000, 2))
-#fighters.append(Player('Font', 155, 8400, 3))
-#fighters.append(Player('Pettis', 685, 7800, 3))
-#fighters.append(Player('Oliveira', -179, 8900, 4))
-#fighters.append(Player('Miller', 426, 7300, 4))
-fighters.append(Player('Grant', -155, 9400, 5))
-#fighters.append(Player('Ottow', 465, 6800, 5))
-#fighters.append(Player('Klose', 426, 9300, 7))
-fighters.append(Player('Green', 665, 6900, 7))
-#fighters.append(Player('Gordon', 329, 8600, 8))
-#fighters.append(Player('Silva', 235, 7600, 8))
-#fighters.append(Player('Hermansson', 155, 8800, 9))
-#fighters.append(Player('Meerschaert', 230, 7400, 9))
-#fighters.append(Player('Ige', 175, 8500, 10))
-#fighters.append(Player('Griffin', 271, 7700, 10))
-fighters.append(Player('Milstead', 179, 8700, 11))
-#fighters.append(Player('Rodriguez', 190, 7500, 11))
-fighters.append(Player('Cummings', 167, 9100, 12))
-#fighters.append(Player('Smith', 850, 7100, 12))
-#fighters.append(Player('Adams', -290, 9500, 13))
-fighters.append(Player('Rocha', 490, 6700, 13))
+fighters.append(Player('Jones', -891, 9600, 1))
+fighters.append(Player('Smith', 570, 6600, 1))
+fighters.append(Player('Woodley', -191, 8700, 2)) 
+fighters.append(Player('Usman', 158, 7500, 2))
+fighters.append(Player('Askren', -274, 9000, 3))
+fighters.append(Player('Lawler', 219, 7200, 3))
+fighters.append(Player('Zhang', -131, 8300, 4))
+#fighters.append(Player('Torres', 105, 7900, 4))
+fighters.append(Player('Garbrandt', -172, 8500, 5))
+fighters.append(Player('Munhoz', 142, 7700, 5))
+fighters.append(Player('Zabit', -247, 8900, 6))
+fighters.append(Player('Stephens', 198, 7300, 6))
+fighters.append(Player('Walker', -135, 8400, 7))
+#fighters.append(Player('Cirkunov', 109, 7800, 7))
+fighters.append(Player('Stamann', -187, 8600, 8))
+fighters.append(Player('Perez', 154, 7600, 8))
+fighters.append(Player('Gall', -291, 9100, 9))
+fighters.append(Player('Sanchez', 231, 7100, 9))
+fighters.append(Player('Shahbazyan', -132, 8200, 10))
+fighters.append(Player('Byrd', 106, 8000, 10))
+fighters.append(Player('Chiasson', -434, 9400, 11))
+fighters.append(Player('Mazany', 327, 6800, 11))
+fighters.append(Player('Vera', -214, 8800, 12))
+fighters.append(Player('Saenz', 172, 7400, 12))
+fighters.append(Player('Viana', -308, 9200, 13))
+fighters.append(Player('Cifers', 243, 7000, 13))
+
+'''# check salaries add up to 16200, assumes 13 fights
+i = 0
+while True:
+    if i > 24:
+        break
+    if fighters[i].salary + fighters[i+1].salary == 16200:
+        i += 2
+        continue
+    else:
+        print("Salaries are wrong!")
+        exit(0)'''
 
 my_combos = combinations(fighters, 6)
 
@@ -75,21 +89,27 @@ for lineup in my_combos:
                 double_flag = True
     if double_flag:
         continue
+    found_player = False
+    for p in lineup:
+        if 'Usman' in p.name:
+            found_player = True
+    if not found_player:
+        continue
+    found_player = False
+    for p in lineup:
+        if 'Askren' in p.name:
+            found_player = True
+    if not found_player:
+        continue
+    found_player = False
+    for p in lineup:
+        if 'Zabit' in p.name:
+            found_player = True
+    if not found_player:
+        continue
     '''found_player = False
     for p in lineup:
-        if 'Iaquinta' in p.name or 'Lee' in p.name:
-            found_player = True
-    if not found_player:
-        continue
-    found_player = False
-    for p in lineup:
-        if 'Rodriguez' in p.name:
-            found_player = True
-    if not found_player:
-        continue
-    found_player = False
-    for p in lineup:
-        if 'Gordon' in p.name:
+        if 'Holtzman' in p.name:
             found_player = True
     if not found_player:
         continue'''
@@ -103,7 +123,8 @@ for lineup in my_combos:
                 winrate *= convert_to_percent(player.odds)
         five_wins_prob += winrate
     five_wins_prob *= 100
-    #if total_score > .5:
+    #if salary > 49000:
+    #if total_score > .125:
     if total_score > best_score:
     #if five_wins_prob > best_score:
     #if five_wins_prob > 17:

@@ -28,10 +28,10 @@ fighters.append(Player('Delbonis', -335, 10000, 1))
 fighters.append(Player('Jaziri', 275, 5500, 1))
 fighters.append(Player('Fognini', -275, 9600, 2)) 
 fighters.append(Player('Aliassime', 235, 5900, 2))
-fighters.append(Player('Simon', -290, 9400, 3))
-fighters.append(Player('Hoang', 245, 5700, 3))
-fighters.append(Player('Watanuki', -275, 9200, 4))
-fighters.append(Player('Lacko', 235, 6100, 4))
+#fighters.append(Player('Simon', -290, 9400, 3))
+#fighters.append(Player('Hoang', 245, 5700, 3))
+#fighters.append(Player('Watanuki', -275, 9200, 4))
+#fighters.append(Player('Lacko', 235, 6100, 4))
 fighters.append(Player('Daniel', -185, 8900, 5))
 fighters.append(Player('Wild', 160, 6300, 5))
 fighters.append(Player('Kukushkin', -200, 8700, 6))
@@ -77,7 +77,7 @@ for lineup in my_combos:
                 double_flag = True
     if double_flag:
         continue
-    if total_score > 6.8:#best_score:
+    if total_score > best_score:
         real_lineups += 1
         for player in lineup:
             print(player)
