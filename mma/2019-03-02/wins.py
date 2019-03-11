@@ -24,32 +24,32 @@ def convert_to_percent(odds):
     return (percent)
 
 fighters = []
-fighters.append(Player('Jones', -891, 9600, 1))
-fighters.append(Player('Smith', 570, 6600, 1))
-fighters.append(Player('Woodley', -191, 8700, 2)) 
-fighters.append(Player('Usman', 158, 7500, 2))
+fighters.append(Player('Jones', -902, 9600, 1))
+fighters.append(Player('Smith', 582, 6600, 1))
+fighters.append(Player('Woodley', -168, 8700, 2)) 
+fighters.append(Player('Usman', 140, 7500, 2))
 fighters.append(Player('Askren', -274, 9000, 3))
-fighters.append(Player('Lawler', 219, 7200, 3))
-fighters.append(Player('Zhang', -131, 8300, 4))
-#fighters.append(Player('Torres', 105, 7900, 4))
-fighters.append(Player('Garbrandt', -172, 8500, 5))
-fighters.append(Player('Munhoz', 142, 7700, 5))
-fighters.append(Player('Zabit', -247, 8900, 6))
-fighters.append(Player('Stephens', 198, 7300, 6))
-fighters.append(Player('Walker', -135, 8400, 7))
-#fighters.append(Player('Cirkunov', 109, 7800, 7))
-fighters.append(Player('Stamann', -187, 8600, 8))
-fighters.append(Player('Perez', 154, 7600, 8))
-fighters.append(Player('Gall', -291, 9100, 9))
-fighters.append(Player('Sanchez', 231, 7100, 9))
-fighters.append(Player('Shahbazyan', -132, 8200, 10))
-fighters.append(Player('Byrd', 106, 8000, 10))
-fighters.append(Player('Chiasson', -434, 9400, 11))
-fighters.append(Player('Mazany', 327, 6800, 11))
+fighters.append(Player('Lawler', 220, 7200, 3))
+fighters.append(Player('Zhang', -140, 8300, 4))
+fighters.append(Player('Torres', 116, 7900, 4))
+fighters.append(Player('Garbrandt', -153, 8500, 5))
+fighters.append(Player('Munhoz', 126, 7700, 5))
+fighters.append(Player('Zabit', -255, 8900, 6))
+fighters.append(Player('Stephens', 204, 7300, 6))
+fighters.append(Player('Walker', -152, 8400, 7))
+fighters.append(Player('Cirkunov', 125, 7800, 7))
+fighters.append(Player('Stamann', -202, 8600, 8))
+fighters.append(Player('Perez', 166, 7600, 8))
+fighters.append(Player('Gall', -230, 9100, 9))
+fighters.append(Player('Sanchez', 185, 7100, 9))
+fighters.append(Player('Shahbazyan', -142, 8200, 10))
+fighters.append(Player('Byrd', 115, 8000, 10))
+fighters.append(Player('Chiasson', -502, 9400, 11))
+fighters.append(Player('Mazany', 374, 6800, 11))
 fighters.append(Player('Vera', -214, 8800, 12))
 fighters.append(Player('Saenz', 172, 7400, 12))
-fighters.append(Player('Viana', -308, 9200, 13))
-fighters.append(Player('Cifers', 243, 7000, 13))
+fighters.append(Player('Viana', -269, 9200, 13))
+fighters.append(Player('Cifers', 215, 7000, 13))
 
 '''# check salaries add up to 16200, assumes 13 fights
 i = 0
@@ -97,17 +97,17 @@ for lineup in my_combos:
         continue
     found_player = False
     for p in lineup:
-        if 'Askren' in p.name:
+        if 'Sanchez' in p.name:
             found_player = True
     if not found_player:
         continue
     found_player = False
-    for p in lineup:
+    '''for p in lineup:
         if 'Zabit' in p.name:
             found_player = True
     if not found_player:
         continue
-    '''found_player = False
+    found_player = False
     for p in lineup:
         if 'Holtzman' in p.name:
             found_player = True

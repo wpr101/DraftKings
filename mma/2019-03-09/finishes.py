@@ -24,34 +24,35 @@ def convert_to_percent(odds):
     return (percent)
 
 fighters = []
-fighters.append(Player('Jones', -435, 9600, 1))
-fighters.append(Player('Smith', 847, 6600, 1))
-fighters.append(Player('Woodley', 150, 8700, 2)) 
-fighters.append(Player('Usman', 435, 7500, 2))
-fighters.append(Player('Askren', 467, 9000, 3))
-fighters.append(Player('Lawler', 362, 7200, 3))
-fighters.append(Player('Zhang', 318, 8300, 4))
-fighters.append(Player('Torres', 1160, 7900, 4))
-fighters.append(Player('Garbrandt', 183, 8500, 5))
-fighters.append(Player('Munhoz', 200, 7700, 5))
-fighters.append(Player('Zabit', 185, 8900, 6))
-fighters.append(Player('Stephens', 314, 7300, 6))
-fighters.append(Player('Walker', -125, 8400, 7))
-fighters.append(Player('Cirkunov', 178, 7800, 7))
-fighters.append(Player('Stamann', 1020, 8600, 8))
-fighters.append(Player('Perez', 382, 7600, 8))
-fighters.append(Player('Gall', -122, 9100, 9))
-fighters.append(Player('Sanchez', 875, 7100, 9))
-fighters.append(Player('Shahbazyan', 172, 8200, 10))
-fighters.append(Player('Byrd', 231, 8000, 10))
-fighters.append(Player('Chiasson', -148, 9400, 11))
-fighters.append(Player('Mazany', 1500, 6800, 11))
-#fighters.append(Player('Vera', 180, 8800, 12))
-#fighters.append(Player('Saenz', 700, 7400, 12))
-fighters.append(Player('Viana', -110, 9200, 13))
-#fighters.append(Player('Cifers', 545, 7000, 13))
+#fighters.append(Player('DosSantos', 130, 9400, 1))
+#fighters.append(Player('Lewis', 205, 6800, 1))
+#fighters.append(Player('Millender', 320, 8200, 2)) 
+#fighters.append(Player('ZaleskiDos', 320, 8000, 2))
+#fighters.append(Player('Means', 120, 8800, 3))
+#fighters.append(Player('Price', 255, 7400, 3))
+fighters.append(Player('Ivanov', 225, 8400, 4))
+#fighters.append(Player('Rothwell', 235, 7800, 4))
+#fighters.append(Player('Dariush', 230, 9000, 5))
+fighters.append(Player('Dober', 535, 7200, 5))
+#fighters.append(Player('Akhmedov', 185, 8500, 6))
+#fighters.append(Player('Boetsch', 175, 7700, 6))
+fighters.append(Player('Martin', 215, 9200, 7))
+fighters.append(Player('Moraes', 365, 7000, 7))
+fighters.append(Player('Kunitskaya', 700, 8900, 8))
+#fighters.append(Player('Reneau', 340, 7300, 8))
+#fighters.append(Player('Dawson', 130, 8700, 9))
+#fighters.append(Player('Erosa', 270, 7500, 9))
+fighters.append(Player('Hughes', 245, 9300, 10))
+fighters.append(Player('Greene', 320, 6900, 10))
+#fighters.append(Player('Smolka', 190, 8300, 11))
+fighters.append(Player('Schnell', 415, 7900, 11))
+fighters.append(Player('Morono', 270, 9100, 12))
+fighters.append(Player('Ottow', 710, 7100, 12))
+#fighters.append(Player('White', 215, 8600, 13))
+#fighters.append(Player('Moret', 245, 7600, 13))
 
-'''# check salaries add up to 16200, assumes 13 fights
+'''
+# check salaries add up to 16200, assumes 13 fights
 i = 0
 while True:
     if i > 24:
@@ -61,7 +62,10 @@ while True:
         continue
     else:
         print("Salaries are wrong!")
-        exit(0)'''
+        exit(0)
+print("looks good")
+exit(0)
+'''
 
 my_combos = combinations(fighters, 6)
 
@@ -89,31 +93,31 @@ for lineup in my_combos:
                 double_flag = True
     if double_flag:
         continue
-    found_player = False
-    for p in lineup:
-        if 'Jones' in p.name: #or 'Woodley' in p.name:
-            found_player = True
-    if not found_player:
-        continue
-    found_player = False
-    for p in lineup:
-        if 'Usman' in p.name:
-            found_player = True
-    if not found_player:
-        continue
-    found_player = False
-    for p in lineup:
-        if 'Askren' in p.name:
-            found_player = True
-    if not found_player:
-        continue
-    found_player = False
-    for p in lineup:
-        if 'Zabit' in p.name:
-            found_player = True
-    if not found_player:
-        continue
     '''found_player = False
+    for p in lineup:
+        if 'Moret' in p.name: #or 'Woodley' in p.name:
+            found_player = True
+    if not found_player:
+        continue
+    found_player = False
+    for p in lineup:
+        if 'Price' in p.name:
+            found_player = True
+    if not found_player:
+        continue
+    found_player = False
+    for p in lineup:
+        if 'Millender' in p.name:
+            found_player = True
+    if not found_player:
+        continue
+    found_player = False
+    for p in lineup:
+        if 'Smolka' in p.name:
+            found_player = True
+    if not found_player:
+        continue
+    found_player = False
     for p in lineup:
         if 'Holtzman' in p.name:
             found_player = True
@@ -130,7 +134,7 @@ for lineup in my_combos:
         five_wins_prob += winrate
     five_wins_prob *= 100
     #if salary > 49000:
-    #if total_score > .5:
+    #if total_score > .4:
     if total_score > best_score:
     #if five_wins_prob > best_score:
     #if five_wins_prob > 17:

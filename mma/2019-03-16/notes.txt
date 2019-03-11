@@ -1,0 +1,288 @@
+Till
+SLpM:  2.39
+Str. Acc.:  45%
+SApM:  2.98
+Str. Def:  61%
+TD Avg.:  0.50
+TD Acc.:  33%
+TD Def.:  86%
+Sub. Avg.:  0.0
+W 10/2/5
+L 0/1/0
+
+Masvidal
+SLpM:  4.15
+Str. Acc.:  46%
+SApM:  2.96
+Str. Def:  67%
+TD Avg.:  1.73
+TD Acc.:  58%
+TD Def.:  78%
+Sub. Avg.:  0.4
+W 13/2/17
+L 1/2/10
+Lots of decisions, tons of experience
+
+Tapology: Masvidal (22%), Till (78%)
+TILL, low
+
+-----
+Edwards
+CAREER STATISTICS:
+SLpM:  2.38
+Str. Acc.:  48%
+SApM:  1.99
+Str. Def:  55%
+TD Avg.:  1.26
+TD Acc.:  29%
+TD Def.:  70%
+Sub. Avg.:  0.5
+W 6/3/7
+L 0/0/2
+Wins over Cerrone, Luque, Barberena, Tumenov! Loss Usman, Claudio Henrique da Silva
+
+Nelson
+SLpM:  1.93
+Str. Acc.:  58%
+SApM:  3.72
+Str. Def:  49%
+TD Avg.:  1.79
+TD Acc.:  57%
+TD Def.:  75%
+Sub. Avg.:  1.2
+W 3/13/1
+L 1/0/2
+Loss to Ponzibinibbio, was losing to Oliveira
+
+Tapology: Nelson (60%), Edwards (40%)
+EDWARDS, low
+
+-----
+Reyes
+SLpM:  6.49
+Str. Acc.:  60%
+SApM:  2.22
+Str. Def:  51%
+TD Avg.:  0.68
+TD Acc.:  25%
+TD Def.:  85%
+Sub. Avg.:  0.7
+W 6/2/2
+L 0/0/0
+Great stats, wins over OSP, Cannonier
+
+Oezdemir
+SLpM:  5.69
+Str. Acc.:  48%
+SApM:  4.84
+Str. Def:  53%
+TD Avg.:  0.40
+TD Acc.:  50%
+TD Def.:  70%
+Sub. Avg.:  0.0
+W 11/1/3
+L 1/2/0
+Only recent losses to Cormier and Anthony Smith
+
+Tapology: Reyes (85%), Oezdemir (15%)
+Great fight to target
+REYES, medium
+
+-----
+Wood
+SLpM:  4.37
+Str. Acc.:  44%
+SApM:  2.42
+Str. Def:  64%
+TD Avg.:  1.40
+TD Acc.:  66%
+TD Def.:  100%
+Sub. Avg.:  1.4
+W 9/4/2
+L 1/2/0
+
+Quinones
+SLpM:  3.26
+Str. Acc.:  44%
+SApM:  2.32
+Str. Def:  68%
+TD Avg.:  2.88
+TD Acc.:  50%
+TD Def.:  57%
+Sub. Avg.:  1.0
+W 2/1/4
+L 1/0/1
+Decision W vs Ishihara, Loss to Alejandro Perez
+
+Tapology: Wood (92%), Quinones (8%)
+WOOD, high
+
+-----
+Roberts
+SLpM:  3.71
+Str. Acc.:  41%
+SApM:  3.44
+Str. Def:  55%
+TD Avg.:  0.00
+TD Acc.:  0%
+TD Def.:  57%
+Sub. Avg.:  0.5
+W 7/5/4
+L 2/1/0
+Losses to Perry (KO), and Taleb (KO)
+
+Silva
+SLpM:  2.55
+Str. Acc.:  45%
+SApM:  2.32
+Str. Def:  45%
+TD Avg.:  3.04
+TD Acc.:  25%
+TD Def.:  50%
+Sub. Avg.:  0.9
+W 2/7/3
+L 0/0/0/1 (DQ)
+Sub Taleb first round, win over Lean Edwards 2014, only 2 fights in last 5 years though
+
+Tapology: Silva (74%), Roberts(26%)
+Roberts looks to have no ground game vs sub expert?
+SILVA high
+
+-----
+Marshman
+SLpM:  2.87
+Str. Acc.:  31%
+SApM:  3.78
+Str. Def:  56%
+TD Avg.:  0.00
+TD Acc.:  0%
+TD Def.:  22%
+Sub. Avg.:  0.0
+W 13/5/4
+L 4/1/3
+Losses Roberson, Carlos Jr., Thiago Santos
+
+Phillips
+SLpM:  2.83
+Str. Acc.:  32%
+SApM:  7.42
+Str. Def:  33%
+TD Avg.:  0.00
+TD Acc.:  0%
+TD Def.:  14%
+Sub. Avg.:  0.0
+W 18/3/0
+L 2/5/1
+Loss to Byrd
+
+Tapology: Marshman (84%), Phillips(16%)
+Likely to end in finish, both guys take a ton of damage
+MARSHMAN, medium
+
+-----
+Allen
+SLpM:  2.12
+Str. Acc.:  33%
+SApM:  1.78
+Str. Def:  57%
+TD Avg.:  2.21
+TD Acc.:  57%
+TD Def.:  66%
+Sub. Avg.:  0.8
+W 5/4/4
+L 0/0/1
+4 wins over lower level guys in UFC
+
+Rinaldi
+SLpM:  1.39
+Str. Acc.:  40%
+SApM:  2.26
+Str. Def:  54%
+TD Avg.:  2.04
+TD Acc.:  45%
+TD Def.:  20%
+Sub. Avg.:  1.6
+W 1/8/5
+L 2/1/3
+Losses to Gillespie, Trujillo, but win over Knight
+
+Tapology: Allen (91%), Rinaldi (9%)
+Surprising that tapology on Allen so strongly
+ALLEN, low
+
+-----
+Diakiese
+SLpM:  2.60
+Str. Acc.:  32%
+SApM:  2.90
+Str. Def:  54%
+TD Avg.:  2.05
+TD Acc.:  31%
+TD Def.:  61%
+Sub. Avg.:  0.0
+W 12/1/5
+L 0/1/2
+
+Duffy
+SLpM:  3.07
+Str. Acc.:  34%
+SApM:  3.45
+Str. Def:  58%
+TD Avg.:  0.66
+TD Acc.:  100%
+TD Def.:  71%
+Sub. Avg.:  1.0
+W 4/10/2
+L 1/1/1
+KO by Vick, Decision loss to Poirier
+
+Tapology: Diakiese (17%), Duffy (83%)
+Surprised Diakiese has TDs, remember him as standup fighter
+Duffy, low
+
+-----
+Safarov
+W 6/2/0
+L 1/1/0
+
+Negumereanu
+W 6/3/0
+L 0/0/0
+UFC debut
+
+Tapology: Negumereanu (79%), Safarov (21%)
+Negumereanu inflated record against huge losers, can't find stats for these guys
+SAFAROV, very low
+
+-----
+Breese
+SLpM:  3.85
+Str. Acc.:  49%
+SApM:  2.57
+Str. Def:  65%
+TD Avg.:  0.00
+TD Acc.:  0%
+TD Def.:  72%
+Sub. Avg.:  0.3
+W 4/6/1
+L 0/0/1
+TKO over Dan Kelly, lost split to Strickland
+
+Heinisch
+SLpM:  3.49
+Str. Acc.:  58%
+SApM:  1.67
+Str. Def:  52%
+TD Avg.:  0.81
+TD Acc.:  14%
+TD Def.:  50%
+Sub. Avg.:  1.6
+W 4/2/6
+L 0/1/0
+Beat Cezar Ferreira, lost Markus Perez
+
+Tapology: Breese (72%), Heinisch (28%)
+Breese more of a finisher
+BREESE
+
+

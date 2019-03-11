@@ -24,34 +24,35 @@ def convert_to_percent(odds):
     return (percent)
 
 fighters = []
-fighters.append(Player('Jones', -435, 9600, 1))
-fighters.append(Player('Smith', 847, 6600, 1))
-fighters.append(Player('Woodley', 150, 8700, 2)) 
-fighters.append(Player('Usman', 435, 7500, 2))
-fighters.append(Player('Askren', 467, 9000, 3))
-fighters.append(Player('Lawler', 362, 7200, 3))
-fighters.append(Player('Zhang', 318, 8300, 4))
-fighters.append(Player('Torres', 1160, 7900, 4))
-fighters.append(Player('Garbrandt', 183, 8500, 5))
-fighters.append(Player('Munhoz', 200, 7700, 5))
-fighters.append(Player('Zabit', 185, 8900, 6))
-fighters.append(Player('Stephens', 314, 7300, 6))
-fighters.append(Player('Walker', -125, 8400, 7))
-fighters.append(Player('Cirkunov', 178, 7800, 7))
-fighters.append(Player('Stamann', 1020, 8600, 8))
-fighters.append(Player('Perez', 382, 7600, 8))
-fighters.append(Player('Gall', -122, 9100, 9))
-fighters.append(Player('Sanchez', 875, 7100, 9))
-fighters.append(Player('Shahbazyan', 172, 8200, 10))
-fighters.append(Player('Byrd', 231, 8000, 10))
-fighters.append(Player('Chiasson', -148, 9400, 11))
-fighters.append(Player('Mazany', 1500, 6800, 11))
-#fighters.append(Player('Vera', 180, 8800, 12))
-#fighters.append(Player('Saenz', 700, 7400, 12))
-fighters.append(Player('Viana', -110, 9200, 13))
-#fighters.append(Player('Cifers', 545, 7000, 13))
+fighters.append(Player('DosSantos', -221, 9400, 1))
+fighters.append(Player('Lewis', 177, 6800, 1))
+fighters.append(Player('Millender', -119, 8200, 2)) 
+fighters.append(Player('ZaleskiDos', -105, 8000, 2))
+fighters.append(Player('Means', -196, 8800, 3))
+fighters.append(Player('Price', 162, 7400, 3))
+fighters.append(Player('Ivanov', -130, 8400, 4))
+fighters.append(Player('Rothwell', 104, 7800, 4))
+fighters.append(Player('Dariush', -188, 9000, 5))
+fighters.append(Player('Dober', 156, 7200, 5))
+fighters.append(Player('Akhmedov', -142, 8500, 6))
+fighters.append(Player('Boetsch', 116, 7700, 6))
+fighters.append(Player('Martin', -199, 9200, 7))
+fighters.append(Player('Moraes', 164, 7000, 7))
+fighters.append(Player('Kunitskaya', -184, 8900, 8))
+fighters.append(Player('Reneau', 152, 7300, 8))
+fighters.append(Player('Dawson', -179, 8700, 9))
+fighters.append(Player('Erosa', 148, 7500, 9))
+fighters.append(Player('Hughes', -215, 9300, 10))
+fighters.append(Player('Greene', 175, 6900, 10))
+fighters.append(Player('Smolka', -107, 8300, 11))
+fighters.append(Player('Schnell', -117, 7900, 11))
+fighters.append(Player('Morono', -195, 9100, 12))
+fighters.append(Player('Ottow', 160, 7100, 12))
+fighters.append(Player('White', -166, 8600, 13))
+fighters.append(Player('Moret', 137, 7600, 13))
 
-'''# check salaries add up to 16200, assumes 13 fights
+'''
+# check salaries add up to 16200, assumes 13 fights
 i = 0
 while True:
     if i > 24:
@@ -61,7 +62,10 @@ while True:
         continue
     else:
         print("Salaries are wrong!")
-        exit(0)'''
+        exit(0)
+print("looks good")
+exit(0)
+'''
 
 my_combos = combinations(fighters, 6)
 
@@ -91,34 +95,40 @@ for lineup in my_combos:
         continue
     found_player = False
     for p in lineup:
-        if 'Jones' in p.name: #or 'Woodley' in p.name:
+        if 'DosSantos' in p.name: #or 'Woodley' in p.name:
             found_player = True
     if not found_player:
         continue
     found_player = False
     for p in lineup:
-        if 'Usman' in p.name:
+        if 'Moraes' in p.name:
             found_player = True
     if not found_player:
         continue
     found_player = False
     for p in lineup:
-        if 'Askren' in p.name:
+        if 'Smolka' in p.name:
             found_player = True
     if not found_player:
         continue
     found_player = False
     for p in lineup:
-        if 'Zabit' in p.name:
+        if 'Dawson' in p.name:
             found_player = True
     if not found_player:
         continue
-    '''found_player = False
+    found_player = False
     for p in lineup:
-        if 'Holtzman' in p.name:
+        if 'Akhmedov' in p.name:
             found_player = True
     if not found_player:
-        continue'''
+        continue
+    found_player = False
+    for p in lineup:
+        if 'Rothwell' in p.name:
+            found_player = True
+    if not found_player:
+        continue
     five_wins_prob = 0
     for loser in lineup:
         winrate = 1

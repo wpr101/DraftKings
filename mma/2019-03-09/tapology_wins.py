@@ -7,7 +7,7 @@ import random
 class Player():
     def __init__(self, name, odds, salary, fight_num):
         self.name = name
-        self.odds = int(odds)
+        self.odds = float(odds)
         self.salary = int(salary)
         self.fight_num = int(fight_num)
 
@@ -24,34 +24,35 @@ def convert_to_percent(odds):
     return (percent)
 
 fighters = []
-fighters.append(Player('Jones', -435, 9600, 1))
-fighters.append(Player('Smith', 847, 6600, 1))
-fighters.append(Player('Woodley', 150, 8700, 2)) 
-fighters.append(Player('Usman', 435, 7500, 2))
-fighters.append(Player('Askren', 467, 9000, 3))
-fighters.append(Player('Lawler', 362, 7200, 3))
-fighters.append(Player('Zhang', 318, 8300, 4))
-fighters.append(Player('Torres', 1160, 7900, 4))
-fighters.append(Player('Garbrandt', 183, 8500, 5))
-fighters.append(Player('Munhoz', 200, 7700, 5))
-fighters.append(Player('Zabit', 185, 8900, 6))
-fighters.append(Player('Stephens', 314, 7300, 6))
-fighters.append(Player('Walker', -125, 8400, 7))
-fighters.append(Player('Cirkunov', 178, 7800, 7))
-fighters.append(Player('Stamann', 1020, 8600, 8))
-fighters.append(Player('Perez', 382, 7600, 8))
-fighters.append(Player('Gall', -122, 9100, 9))
-fighters.append(Player('Sanchez', 875, 7100, 9))
-fighters.append(Player('Shahbazyan', 172, 8200, 10))
-fighters.append(Player('Byrd', 231, 8000, 10))
-fighters.append(Player('Chiasson', -148, 9400, 11))
-fighters.append(Player('Mazany', 1500, 6800, 11))
-#fighters.append(Player('Vera', 180, 8800, 12))
-#fighters.append(Player('Saenz', 700, 7400, 12))
-fighters.append(Player('Viana', -110, 9200, 13))
-#fighters.append(Player('Cifers', 545, 7000, 13))
+fighters.append(Player('DosSantos', .67, 9400, 1))
+fighters.append(Player('Lewis', .33, 6800, 1))
+fighters.append(Player('Millender', .7, 8200, 2)) 
+fighters.append(Player('ZaleskiDos', .3, 8000, 2))
+fighters.append(Player('Means', .52, 8800, 3))
+fighters.append(Player('Price', .48, 7400, 3))
+fighters.append(Player('Ivanov', .51, 8400, 4))
+fighters.append(Player('Rothwell', .49, 7800, 4))
+fighters.append(Player('Dariush', .81, 9000, 5))
+fighters.append(Player('Dober', .19, 7200, 5))
+fighters.append(Player('Akhmedov', .59, 8500, 6))
+fighters.append(Player('Boetsch', .41, 7700, 6))
+fighters.append(Player('Martin', .72, 9200, 7))
+fighters.append(Player('Moraes', .28, 7000, 7))
+fighters.append(Player('Kunitskaya', .67, 8900, 8))
+fighters.append(Player('Reneau', .33, 7300, 8))
+fighters.append(Player('Dawson', .83, 8700, 9))
+fighters.append(Player('Erosa', .17, 7500, 9))
+fighters.append(Player('Hughes', .73, 9300, 10))
+fighters.append(Player('Greene', .27, 6900, 10))
+fighters.append(Player('Smolka', .86, 8300, 11))
+fighters.append(Player('Schnell', .14, 7900, 11))
+fighters.append(Player('Morono', .8, 9100, 12))
+fighters.append(Player('Ottow', .2, 7100, 12))
+fighters.append(Player('White', .65, 8600, 13))
+fighters.append(Player('Moret', .35, 7600, 13))
 
-'''# check salaries add up to 16200, assumes 13 fights
+'''
+# check salaries add up to 16200, assumes 13 fights
 i = 0
 while True:
     if i > 24:
@@ -61,7 +62,10 @@ while True:
         continue
     else:
         print("Salaries are wrong!")
-        exit(0)'''
+        exit(0)
+print("looks good")
+exit(0)
+'''
 
 my_combos = combinations(fighters, 6)
 
@@ -73,12 +77,10 @@ for lineup in my_combos:
     salary = 0
     for player in lineup:
         salary += player.salary
-        if player.odds < 0:
-            total_score *= float(player.odds) / float((player.odds - 100))
-        else:
-            total_score *= float(100) / float((player.odds + 100))
+        total_score *= float(player.odds)
+
     # Conver to %
-    total_score *= 100
+    #total_score *= 100
     if salary > 50000:
         continue
     
@@ -89,37 +91,43 @@ for lineup in my_combos:
                 double_flag = True
     if double_flag:
         continue
-    found_player = False
-    for p in lineup:
-        if 'Jones' in p.name: #or 'Woodley' in p.name:
-            found_player = True
-    if not found_player:
-        continue
-    found_player = False
-    for p in lineup:
-        if 'Usman' in p.name:
-            found_player = True
-    if not found_player:
-        continue
-    found_player = False
-    for p in lineup:
-        if 'Askren' in p.name:
-            found_player = True
-    if not found_player:
-        continue
-    found_player = False
-    for p in lineup:
-        if 'Zabit' in p.name:
-            found_player = True
-    if not found_player:
-        continue
     '''found_player = False
     for p in lineup:
-        if 'Holtzman' in p.name:
+        if 'DosSantos' in p.name: #or 'Woodley' in p.name:
+            found_player = True
+    if not found_player:
+        continue
+    found_player = False
+    for p in lineup:
+        if 'Moraes' in p.name:
+            found_player = True
+    if not found_player:
+        continue
+    found_player = False
+    for p in lineup:
+        if 'Smolka' in p.name:
+            found_player = True
+    if not found_player:
+        continue
+    found_player = False
+    for p in lineup:
+        if 'Dawson' in p.name:
+            found_player = True
+    if not found_player:
+        continue
+    found_player = False
+    for p in lineup:
+        if 'Akhmedov' in p.name:
+            found_player = True
+    if not found_player:
+        continue
+    found_player = False
+    for p in lineup:
+        if 'Rothwell' in p.name:
             found_player = True
     if not found_player:
         continue'''
-    five_wins_prob = 0
+    '''five_wins_prob = 0
     for loser in lineup:
         winrate = 1
         for player in lineup:
@@ -128,7 +136,7 @@ for lineup in my_combos:
             else:
                 winrate *= convert_to_percent(player.odds)
         five_wins_prob += winrate
-    five_wins_prob *= 100
+    five_wins_prob *= 100'''
     #if salary > 49000:
     #if total_score > .5:
     if total_score > best_score:
@@ -139,7 +147,7 @@ for lineup in my_combos:
             print(player)
         print("salary", salary)
         print("percentage to win all fights:", round(total_score,3))
-        print("percentage to win 5 fights:", round(five_wins_prob,3))
+        #print("percentage to win 5 fights:", round(five_wins_prob,3))
         print("")
         #best_score = five_wins_prob
         best_score = total_score
