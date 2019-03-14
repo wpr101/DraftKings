@@ -285,4 +285,86 @@ Tapology: Breese (72%), Heinisch (28%)
 Breese more of a finisher
 BREESE
 
+-----
+Ige
+SLpM:  3.84
+Str. Acc.:  46%
+SApM:  3.37
+Str. Def:  59%
+TD Avg.:  3.05
+TD Acc.:  33%
+TD Def.:  60%
+Sub. Avg.:  1.0
+W 3/4/3
+L 0/0/2
+Only lost 2 decisions, one to Arce
+
+Henry
+SLpM:  6.07
+Str. Acc.:  53%
+SApM:  4.60
+Str. Def:  45%
+TD Avg.:  0.96
+TD Acc.:  33%
+TD Def.:  100%
+Sub. Avg.:  2.9
+W 5/5/2
+L 0/0/2
+Also only lost 2 decisions
+
+Both have great stats, good one to watch tape on
+HENRY
+Tapology: Ige (34%), Henry (66%)
+
+-----
+McCann
+SLpM:  1.41
+Str. Acc.:  30%
+SApM:  2.40
+Str. Def:  66%
+TD Avg.:  0.00
+TD Acc.:  0%
+TD Def.:  50%
+Sub. Avg.:  0.0
+W 4/0/3
+L 0/1/1
+
+Cachoeira
+SLpM:  0.21
+Str. Acc.:  16%
+SApM:  10.09
+Str. Def:  15%
+TD Avg.:  0.00
+TD Acc.:  0%
+TD Def.:  0%
+Sub. Avg.:  0.0
+W 4/0/4
+L 0/1/0
+Loss to Schevchenko, where it should have been stopped ("allowed her to be warrior")
+
+Tapology: Cachoeira (54%), McCann (46%)
+CACHOEIRA
+-----
+Narimani
+SLpM:  4.30
+Str. Acc.:  50%
+SApM:  2.60
+Str. Def:  65%
+TD Avg.:  3.50
+TD Acc.:  43%
+TD Def.:  100%
+Sub. Avg.:  0.0
+W 2/5/5
+L 0/0/2
+Beat 2 no names in UFC via decision
+
+Grundy
+New to UFC
+W 0/8/3
+L 0/1/0
+
+Tapology: Narimani (82%), Grundy (18%)
+Good TDD, more expereience
+NARIMANI
+
 

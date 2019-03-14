@@ -1,0 +1,58 @@
+G,G,G,G,G,G,,Instructions
+,,,,,,,1. Locate the player you want to select in the list below 
+,,,,,,,2. Copy the ID of your player (you can use the Name + ID column or the ID column) 
+,,,,,,,3. Paste the ID into the roster position desired 
+,,,,,,,4. You must include an ID for each player; you cannot use just the player's name 
+,,,,,,,5. You can create up to 500 lineups per file 
+ 
+,,,,,,,Position,Name + ID,Name,ID,Roster Position,Salary,Game Info,TeamAbbrev,AvgPointsPerGame
+,,,,,,,G,Dustin Johnson (12217125),Dustin Johnson,12217125,G,11400,THE PLAYERS Championship,Golf,94.75
+,,,,,,,G,Justin Thomas (12217126),Justin Thomas,12217126,G,11100,THE PLAYERS Championship,Golf,98.44
+,,,,,,,G,Rory McIlroy (12217127),Rory McIlroy,12217127,G,10800,THE PLAYERS Championship,Golf,93.75
+,,,,,,,G,Justin Rose (12217129),Justin Rose,12217129,G,10200,THE PLAYERS Championship,Golf,88.25
+,,,,,,,G,Brooks Koepka (12217130),Brooks Koepka,12217130,G,10000,THE PLAYERS Championship,Golf,75.38
+,,,,,,,G,Rickie Fowler (12217131),Rickie Fowler,12217131,G,9700,THE PLAYERS Championship,Golf,96.06
+,,,,,,,G,Jon Rahm (12217132),Jon Rahm,12217132,G,9500,THE PLAYERS Championship,Golf,92.62
+,,,,,,,G,Bryson DeChambeau (12217133),Bryson DeChambeau,12217133,G,9300,THE PLAYERS Championship,Golf,98.06
+,,,,,,,G,Sergio Garcia (12217135),Sergio Garcia,12217135,G,9100,THE PLAYERS Championship,Golf,79.75
+,,,,,,,G,Xander Schauffele (12217136),Xander Schauffele,12217136,G,9000,THE PLAYERS Championship,Golf,95.22
+,,,,,,,G,Tommy Fleetwood (12217138),Tommy Fleetwood,12217138,G,8800,THE PLAYERS Championship,Golf,77.56
+,,,,,,,G,Patrick Cantlay (12217139),Patrick Cantlay,12217139,G,8700,THE PLAYERS Championship,Golf,88.56
+,,,,,,,G,Francesco Molinari (12217140),Francesco Molinari,12217140,G,8600,THE PLAYERS Championship,Golf,75.25
+,,,,,,,G,Webb Simpson (12217141),Webb Simpson,12217141,G,8500,THE PLAYERS Championship,Golf,83.08
+,,,,,,,G,Tony Finau (12217142),Tony Finau,12217142,G,8400,THE PLAYERS Championship,Golf,82.28
+,,,,,,,G,Hideki Matsuyama (12217143),Hideki Matsuyama,12217143,G,8300,THE PLAYERS Championship,Golf,76.17
+,,,,,,,G,Adam Scott (12217144),Adam Scott,12217144,G,8200,THE PLAYERS Championship,Golf,67.21
+,,,,,,,G,Patrick Reed (12217145),Patrick Reed,12217145,G,8100,THE PLAYERS Championship,Golf,76.65
+,,,,,,,G,Matt Kuchar (12217146),Matt Kuchar,12217146,G,8000,THE PLAYERS Championship,Golf,92.44
+,,,,,,,G,Paul Casey (12217148),Paul Casey,12217148,G,7900,THE PLAYERS Championship,Golf,83.25
+,,,,,,,G,Henrik Stenson (12217150),Henrik Stenson,12217150,G,7800,THE PLAYERS Championship,Golf,51.17
+,,,,,,,G,Ian Poulter (12217153),Ian Poulter,12217153,G,7600,THE PLAYERS Championship,Golf,85.61
+,,,,,,,G,Cameron Smith (12217154),Cameron Smith,12217154,G,7600,THE PLAYERS Championship,Golf,80.4
+,,,,,,,G,Marc Leishman (12217155),Marc Leishman,12217155,G,7600,THE PLAYERS Championship,Golf,94.94
+,,,,,,,G,Gary Woodland (12217157),Gary Woodland,12217157,G,7500,THE PLAYERS Championship,Golf,93.18
+,,,,,,,G,Billy Horschel (12217159),Billy Horschel,12217159,G,7400,THE PLAYERS Championship,Golf,70.5
+,,,,,,,G,Rafael Cabrera-Bello (12217161),Rafael Cabrera-Bello,12217161,G,7400,THE PLAYERS Championship,Golf,80.9
+,,,,,,,G,Keegan Bradley (12217162),Keegan Bradley,12217162,G,7400,THE PLAYERS Championship,Golf,75.5
+,,,,,,,G,Tyrrell Hatton (12217163),Tyrrell Hatton,12217163,G,7300,THE PLAYERS Championship,Golf,66.19
+,,,,,,,G,Bubba Watson (12217164),Bubba Watson,12217164,G,7300,THE PLAYERS Championship,Golf,70.79
+,,,,,,,G,Charles Howell (12217167),Charles Howell,12217167,G,7300,THE PLAYERS Championship,Golf,86.41
+,,,,,,,G,Adam Hadwin (12217171),Adam Hadwin,12217171,G,7200,THE PLAYERS Championship,Golf,76.65
+,,,,,,,G,Lucas Glover (12217178),Lucas Glover,12217178,G,7100,THE PLAYERS Championship,Golf,82.06
+,,,,,,,G,Kevin Kisner (12217181),Kevin Kisner,12217181,G,7000,THE PLAYERS Championship,Golf,68.12
+,,,,,,,G,Matthew Fitzpatrick (12217190),Matthew Fitzpatrick,12217190,G,6900,THE PLAYERS Championship,Golf,76.83
+,,,,,,,G,Sungjae Im (12217198),Sungjae Im,12217198,G,6800,THE PLAYERS Championship,Golf,70.61
+,,,,,,,G,Byeong-Hun An (12217199),Byeong-Hun An,12217199,G,6800,THE PLAYERS Championship,Golf,70.56
+,,,,,,,G,Keith Mitchell (12217200),Keith Mitchell,12217200,G,6800,THE PLAYERS Championship,Golf,68.46
+,,,,,,,G,Matt Wallace (12217203),Matt Wallace,12217203,G,6700,THE PLAYERS Championship,Golf,71.67
+,,,,,,,G,Daniel Berger (12217204),Daniel Berger,12217204,G,6700,THE PLAYERS Championship,Golf,56.42
+,,,,,,,G,Jason Kokrak (12217208),Jason Kokrak,12217208,G,6700,THE PLAYERS Championship,Golf,78.72
+,,,,,,,G,Bud Cauley (12217212),Bud Cauley,12217212,G,6600,THE PLAYERS Championship,Golf,61.5
+,,,,,,,G,Patrick Rodgers (12217213),Patrick Rodgers,12217213,G,6600,THE PLAYERS Championship,Golf,58.29
+,,,,,,,G,Ryan Palmer (12217216),Ryan Palmer,12217216,G,6600,THE PLAYERS Championship,Golf,78.25
+,,,,,,,G,Lucas Bjerregaard (12217220),Lucas Bjerregaard,12217220,G,6500,THE PLAYERS Championship,Golf,64.67
+,,,,,,,G,Scott Piercy (12217228),Scott Piercy,12217228,G,6400,THE PLAYERS Championship,Golf,75.46
+,,,,,,,G,Chris Kirk (12217232),Chris Kirk,12217232,G,6400,THE PLAYERS Championship,Golf,49
+,,,,,,,G,Aaron Baddeley (12217235),Aaron Baddeley,12217235,G,6300,THE PLAYERS Championship,Golf,66.44
+,,,,,,,G,Jhonattan Vegas (12217267),Jhonattan Vegas,12217267,G,6100,THE PLAYERS Championship,Golf,60.5
+,,,,,,,G,Sung Kang (12217262),Sung Kang,12217262,G,6000,THE PLAYERS Championship,Golf,61.04
