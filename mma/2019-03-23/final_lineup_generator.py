@@ -121,36 +121,36 @@ def rotate_fades():
         count += 1
         
     for fighter in fighters:
-        if fighter.name == 'Nathaniel Wood':
-            fighter.fight_num = 4
-            fighter.odds = 85
-        elif fighter.name == 'Dominick Reyes':
-            fighter.fight_num = 3
-            fighter.odds = 66
-        elif fighter.name == 'Joe Duffy':
-            fighter.fight_num = 8
-            fighter.odds = 58
-        elif fighter.name == 'Claudio Silva':
-            fighter.fight_num = 5
-            fighter.odds = 42
-        elif fighter.name == 'Molly McCann':
-            fighter.fight_num = 12
-            fighter.odds = 58
-        elif fighter.name == 'Dan Ige':
-            fighter.fight_num = 11
-            fighter.odds = 57
-        elif fighter.name == 'John Phillips':
-            fighter.fight_num = 6
-            fighter.odds = 75
-        elif fighter.name == 'Mike Grundy':
-            fighter.fight_num = 13
-            fighter.odds = 45
-        elif fighter.name == 'Saparbeg Safarov':
-            fighter.fight_num = 9
-            fighter.odds = 48
-        elif fighter.name == 'Jorge Masvidal':
+        if fighter.name == 'Bryce Mitchell':
+            fighter.fight_num = 7
+            fighter.odds = 111
+        elif fighter.name == 'Stephen Thompson':
             fighter.fight_num = 1
+            fighter.odds = 108
+        elif fighter.name == 'Marlon Vera':
+            fighter.fight_num = 8
+            fighter.odds = 89
+        elif fighter.name == 'Chris Gutierrez':
+            fighter.fight_num = 11
+            fighter.odds = 80
+        elif fighter.name == 'Maycee Barber':
+            fighter.fight_num = 6
+            fighter.odds = 71
+        elif fighter.name == 'Justin Willis':
+            fighter.fight_num = 2
+            fighter.odds = 59
+        elif fighter.name == 'Angela Hill':
+            fighter.fight_num = 10
             fighter.odds = 44
+        elif fighter.name == 'John Makdessi':
+            fighter.fight_num = 3
+            fighter.odds = 39
+        elif fighter.name == 'Deiveson Figueiredo':
+            fighter.fight_num = 4
+            fighter.odds = 37
+        elif fighter.name == 'Jussier Formiga':
+            fighter.fight_num = 4
+            fighter.odds = 33
             
     gen_best_lineup(fighters)
 

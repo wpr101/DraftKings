@@ -121,36 +121,49 @@ def rotate_fades():
         count += 1
         
     for fighter in fighters:
-        if fighter.name == 'Nathaniel Wood':
-            fighter.fight_num = 4
-            fighter.odds = 85
-        elif fighter.name == 'Dominick Reyes':
-            fighter.fight_num = 3
-            fighter.odds = 66
-        elif fighter.name == 'Joe Duffy':
-            fighter.fight_num = 8
-            fighter.odds = 58
-        elif fighter.name == 'Claudio Silva':
-            fighter.fight_num = 5
-            fighter.odds = 42
-        elif fighter.name == 'Molly McCann':
-            fighter.fight_num = 12
-            fighter.odds = 58
-        elif fighter.name == 'Dan Ige':
-            fighter.fight_num = 11
-            fighter.odds = 57
-        elif fighter.name == 'John Phillips':
-            fighter.fight_num = 6
-            fighter.odds = 75
-        elif fighter.name == 'Mike Grundy':
+
+        if fighter.name == 'Alex Perez':
             fighter.fight_num = 13
-            fighter.odds = 45
-        elif fighter.name == 'Saparbeg Safarov':
-            fighter.fight_num = 9
-            fighter.odds = 48
-        elif fighter.name == 'Jorge Masvidal':
+            fighter.odds = 77
+        #elif fighter.name == 'Kennedy Nzechukwu':
+            #fighter.fight_num = 5
+            #fighter.odds = 49
+        elif fighter.name == 'Kevin Holland':
+            fighter.fight_num = 10
+            fighter.odds = 80
+        elif fighter.name == 'Sodiq Yusuff':
+            fighter.fight_num = 6
+            fighter.odds = 55
+        #elif fighter.name == 'Michael Johnson':
+            #fighter.fight_num = 3
+            #fighter.odds = 37
+        elif fighter.name == 'Jack Hermansson':
+            fighter.fight_num = 2
+            fighter.odds = 73
+        #elif fighter.name == 'Kevin Aguilar':
+            #fighter.fight_num = 9
+            #fighter.odds = 53
+        #elif fighter.name == 'David Branch':
+            #fighter.fight_num = 2
+            #fighter.odds = 33
+        elif fighter.name == 'Josh Emmett':
+            fighter.fight_num = 3
+            fighter.odds = 35
+        elif fighter.name == 'Justin Gaethje':
             fighter.fight_num = 1
-            fighter.odds = 44
+            fighter.odds = 92
+        elif fighter.name == 'Sheymon Moraes':
+            fighter.fight_num = 6
+            fighter.odds = 51
+        elif fighter.name == 'Paul Craig':
+            fighter.fight_num = 5
+            fighter.odds = 50
+        elif fighter.name == 'Enrique Barzola':
+            fighter.fight_num = 9
+            fighter.odds = 46
+        elif fighter.name == 'Marina Rodriguez':
+            fighter.fight_num = 7
+            fighter.odds = 40
             
     gen_best_lineup(fighters)
 
