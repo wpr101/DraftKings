@@ -202,7 +202,7 @@ def run_sim():
                 if diff_points < 0:
                     diff_points = 0
                 break
-        fighter.ranking += int(diff_points)
+        fighter.ranking += int(diff_points * 2)
         #print fighter.name, fighter.ranking
     for fighter in fighters:
         percent_odds = round(convert_to_percent(fighter.finish_odds),4)
@@ -215,7 +215,7 @@ def run_sim():
                 if diff_points < 0:
                     diff_points = 0
                 break
-        fighter.ranking += int(diff_points) / 2
+        fighter.ranking += int(diff_points)
         #print fighter.name, fighter.ranking
     fighters.sort(key=lambda x: x.ranking, reverse=True)
     for fighter in fighters:
