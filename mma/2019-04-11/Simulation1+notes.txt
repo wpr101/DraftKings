@@ -1,0 +1,33 @@
+Holloway
+SLPM: 6.9
+TD: .32
+(6.9 * 15) + (.32 * 10)
+Score: 103.5 + 3.2 = 106.7
+
+Poirier
+SLPM: 5.59
+TD: 1.75
+(5.59 * 15)
+(1.75 * 5)
+83.85 + 8.75
+Score: 92.6
+
+Gastelum
+SLPM: 3.86
+TD .82
+57.9 + 4.1
+Score: 62
+
+Adesanya
+SLPM: 4.47
+TD 0
+Score: 67.05
+
+Anders
+SLPM: 3.12
+TD: 2.05
+46.8 + 10.25
+
+Rountree
+SLPM: 2.3
+TD: 0
